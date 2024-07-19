@@ -1,29 +1,27 @@
-import logoDark from "/16bits-dark-logo.svg";
-import "./App.css";
+import { setDarkModeActivation } from "nes-ui-react";
+import { useCallback, useEffect, useState } from "react";
+import Header from "./components/Header";
+import Main from "./components/Main";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(true);
+  const toggleDarkMode = useCallback(() => {
+    setDarkMode(!darkMode);
+  }, [darkMode]);
+
+  useEffect(() => setDarkModeActivation(darkMode), [darkMode]);
+
+  // const [cartItems, setCartItems] = useState(0);
+
+  // function addToCa3rt() {
+  // setCartItems(cartItems + 1);
+  // }
+
   return (
     <>
-      <header>
-        <div className="logo-container">
-          <a href="/">
-            <img src={logoDark} className="logo" alt="16bits logo" />
-          </a>
-        </div>
-        <div className="navigation-container">
-          <nav className="nav-links">
-            <a href="/docs">Docs</a>
-            <a href="/about">About</a>
-            <a href="/groupbuy">Group Buy</a>
-            <a href="/Products">Products</a>
-          </nav>
-          <div className="cart-container">
-            <i className="fa-solid fa-cart-shopping">: 0</i>
-          </div>
-        </div>
-      </header>
+      <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
-      <main></main>
+      <Main />
 
       <footer>
         <div className="footer-container">

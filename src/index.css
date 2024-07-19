@@ -1,5 +1,5 @@
 @import url("./styles/fonts.css");
-@import url("./styles/variables.css");
+@import url("./styles/_global-overrides.scss");
 
 * {
   margin: 0;
@@ -7,36 +7,144 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: var(--background);
-  color: var(--text-primary);
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
 
 header {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
 }
 
-.logo-container img {
-  width: 60%;
+header a {
+  color: var(--color-black-absolute) !important;
+  text-decoration: none;
+  font-family: Tiny5, monospace;
+  font-size: 1rem !important;
+  line-height: 2rem;
+}
+
+header a:hover {
+  color: var(--primary-color-normal) !important;
+}
+
+.nes-ui-dark-mode header a {
+  color: var(--default-color-normal) !important;
+}
+
+.nes-ui-dark-mode header a:hover {
+  color: var(--primary-color-normal) !important;
+}
+
+.navigation-container a:hover {
+  color: var(--primary-color-normal);
+}
+
+.logo-container {
+  cursor: pointer;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  max-width: 64px;
+  filter: drop-shadow(0 0 1rem var(--color-black));
+  fill: var(--color-black-absolute);
+  transition-duration: 250ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 1rem var(--primary-color-shadow));
+  fill: var(--primary-color-normal);
+}
+
+.nes-ui-dark-mode .logo {
+  filter: drop-shadow(0 0 1rem var(--primary-color-shadow));
+  fill: var(--primary-color-normal);
+}
+
+.nes-ui-dark-mode .logo:hover {
+  filter: drop-shadow(0 0 1rem var(--default-color-shadow));
+  fill: var(--default-color-normal);
 }
 
 .navigation-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 .nav-links {
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 1rem;
 }
 
 .cart-container {
-  display: flex;
-  align-items: center;
-  margin-left: 1rem;
+  padding: 1rem;
 }
 
+.cart-logo {
+  width: 100%;
+  height: 100%;
+  max-width: 44px;
+  fill: var(--color-black-absolute);
+  transition-duration: 250ms;
+}
+
+.cart-logo:hover {
+  fill: var(--primary-color-normal);
+}
+
+.nes-ui-dark-mode .cart-logo {
+  fill: var(--default-color-normal);
+}
+
+.nes-ui-dark-mode .cart-logo:hover {
+  fill: var(--primary-color-normal);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  max-width: 480px;
+}
+
+@media (min-width: 600px) {
+  header {
+    flex-direction: row;
+  }
+
+  .navigation-container {
+    flex-direction: row;
+  }
+
+  .nav-links {
+    flex-direction: row;
+  }
+
+  .cart-container {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+}

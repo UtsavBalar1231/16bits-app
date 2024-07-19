@@ -1,0 +1,219 @@
+@import "nes-ui-react";
+
+// shaded black and white (anachronistic vibe)
+$color-black: #1d2021 !default;
+$color-white: #ddc7a1 !default;
+
+// absolute black and white
+$color-black-absolute: #141617 !default;
+$color-white-absolute: #ffffff !default;
+
+// contrast alpha colors (used for scrollbar)
+$contrast-alpha-color-normal: #999999bb !default;
+$contrast-alpha-color-shadow: #99999933 !default;
+
+// named colors
+$default-color-normal: $color-white !default;
+$default-color-hover: #d4be98 !default;
+$default-color-shadow: #a89984 !default;
+
+$disabled-color-normal: #928374 !default;
+$disabled-color-shadow: #adafbc !default;
+
+$primary-color-normal: #7daea3 !default;
+$primary-color-hover: #73a197 !default;
+$primary-color-shadow: #45707a !default;
+
+$success-color-normal: #a9b665 !default;
+$success-color-hover: #98a35d !default;
+$success-color-shadow: #6c782e !default;
+
+$warning-color-normal: #d8a657 !default;
+$warning-color-hover: #c99b50 !default;
+$warning-color-shadow: #b47107 !default;
+
+$error-color-normal: #ea6962 !default;
+$error-color-hover: #df645e !default;
+$error-color-shadow: #c14a4a !default;
+
+$base-color: $color-black !default;
+$background-color: $color-white !default;
+
+$default-colors: (
+  normal: $default-color-normal,
+  hover: $default-color-hover,
+  shadow: $default-color-shadow,
+) !default;
+
+$disabled-colors: (
+  normal: $disabled-color-normal,
+  shadow: $disabled-color-shadow,
+) !default;
+
+$primary-colors: (
+  normal: $primary-color-normal,
+  hover: $primary-color-hover,
+  shadow: $primary-color-shadow,
+) !default;
+
+$success-colors: (
+  normal: $success-color-normal,
+  hover: $success-color-hover,
+  shadow: $success-color-shadow,
+) !default;
+
+$warning-colors: (
+  normal: $warning-color-normal,
+  hover: $warning-color-hover,
+  shadow: $warning-color-shadow,
+) !default;
+
+$error-colors: (
+  normal: $error-color-normal,
+  hover: $error-color-hover,
+  shadow: $error-color-shadow,
+) !default;
+
+$color-00: #504945 !default; // gruvbox material bg1
+$color-01: #282828 !default; // gruvbox material bg0
+$color-02: #3c3836 !default; // gruvbox material bg0_soft
+$color-03: #32302f !default; // gruvbox material bg0_hard
+$color-04: #9d0006 !default; // gruvbox material red
+$color-05: #cc241d !default; // gruvbox material red_light
+$color-06: #fb4934 !default; // gruvbox material red_dark
+$color-07: #b16139 !default; // gruvbox material orange
+$color-08: #d75f00 !default; // gruvbox material orange_light
+$color-09: #f78c6c !default; // gruvbox material orange_dark
+$color-0A: #af3a03 !default; // gruvbox material yellow
+$color-0B: #f4bc87 !default; // gruvbox material yellow_light
+$color-0C: #e7c547 !default; // gruvbox material yellow_dark
+$color-0D: #79740e !default; // gruvbox material green
+$color-0E: #b5bd68 !default; // gruvbox material green_light
+$color-0F: #f0f075 !default; // gruvbox material green_dark
+$color-10: #076678 !default; // gruvbox material aqua
+$color-11: #83a598 !default; // gruvbox material aqua_light
+$color-12: #8ec07c !default; // gruvbox material aqua_dark
+$color-13: #83a598 !default; // gruvbox material blue
+$color-14: #83a598 !default; // gruvbox material blue_light
+$color-15: #83a598 !default; // gruvbox material blue_dark
+$color-16: #204a87 !default; // gruvbox material purple
+$color-17: #b7b1c4 !default; // gruvbox material purple_light
+$color-18: #d3869b !default; // gruvbox material purple_dark
+$color-19: #98971a !default; // gruvbox material maroon
+$color-1A: #ebdbb2 !default; // gruvbox material maroon_light
+$color-1B: #fb4934 !default; // gruvbox material maroon_dark
+$color-1C: #b16139 !default; // gruvbox material fg1
+$color-1D: #a89984 !default; // gruvbox material fg0
+$color-1E: #928374 !default; // gruvbox material fg_dark
+$color-1F: #928374 !default; // gruvbox material fg_darker
+$color-20: #ebdbb2 !default; // gruvbox material grey_fg
+$color-21: #b7b1c4 !default; // gruvbox material grey_fg_light
+$color-22: #d3869b !default; // gruvbox material grey_fg_dark
+$color-23: #83a598 !default; // gruvbox material grey_fg_contrast
+$color-24: #83a598 !default; // gruvbox material grey_fg_contrast_light
+$color-25: #83a598 !default; // gruvbox material grey_fg_contrast_dark
+$color-26: #204a87 !default; // gruvbox material grey_emphasis
+$color-27: #b7b1c4 !default; // gruvbox material grey_emphasis_light
+$color-28: #d3869b !default; // gruvbox material grey_emphasis_dark
+$color-29: #83a598 !default; // gruvbox material comment
+$color-2A: #83a598 !default; // gruvbox material comment_fg
+$color-2B: #83a598 !default; // gruvbox material comment_fg_emphasis
+$color-2C: #83a598 !default; // gruvbox material comment_fg_contrast
+$color-2D: #83a598 !default; // gruvbox material comment_fg_contrast_light
+$color-2E: #83a598 !default; // gruvbox material comment_fg_contrast_dark
+$color-2F: #83a598 !default; // gruvbox material comment_del
+$color-30: #83a598 !default; // gruvbox material comment_del_fg
+$color-31: #83a598 !default; // gruvbox material comment_del_fg_emphasis
+$color-32: #83a598 !default; // gruvbox material comment_del_fg_contrast
+$color-33: #83a598 !default; // gruvbox material comment_del_fg_contrast_light
+$color-34: #83a598 !default; // gruvbox material comment_del_fg_contrast_dark
+$color-35: #83a598 !default; // gruvbox material comment_add
+$color-36: #83a598 !default; // gruvbox material comment_add_fg
+$color-37: #83a598 !default; // gruvbox material comment_add_fg_emphasis
+$color-38: #83a598 !default; // gruvbox material comment_add_fg_contrast
+$color-39: #83a598 !default; // gruvbox material comment_add_fg_contrast_light
+$color-3A: #83a598 !default; // gruvbox material comment_add_fg_contrast_dark
+$color-3B: #83a598 !default; // gruvbox material comment_str
+$color-3C: #83a598 !default; // gruvbox material comment_str_fg
+$color-3D: #83a598 !default; // gruvbox material comment_str_fg_emphasis
+$color-3E: #83a598 !default; // gruvbox material comment_str_fg_contrast
+$color-3F: #83a598 !default; // gruvbox material comment_str_fg_contrast_light
+
+:root {
+  --font-family: "Space Mono";
+  --border-size: 4px;
+  --font-size: 1rem;
+
+  --background-color: #{$color-white-absolute};
+  --color-white: #{$color-white};
+  --color-black: #{$color-black};
+
+  --color-black-absolute: #{$color-black-absolute};
+  --color-white-absolute: #{$color-white-absolute};
+
+  --contrast-alpha-color-normal: #{$contrast-alpha-color-normal};
+  --contrast-alpha-color-shadow: #{$contrast-alpha-color-shadow};
+
+  --default-color-normal: #{$default-color-normal};
+  --default-color-hover: #{$default-color-hover};
+  --default-color-shadow: #{$default-color-shadow};
+
+  --disabled-color-normal: #{$disabled-color-normal};
+  --disabled-color-shadow: #{$disabled-color-shadow};
+
+  --primary-color-normal: #{$primary-color-normal};
+  --primary-color-hover: #{$primary-color-hover};
+  --primary-color-shadow: #{$primary-color-shadow};
+
+  --success-color-normal: #{$success-color-normal};
+  --success-color-hover: #{$success-color-hover};
+  --success-color-shadow: #{$success-color-shadow};
+
+  --warning-color-normal: #{$warning-color-normal};
+  --warning-color-hover: #{$warning-color-hover};
+  --warning-color-shadow: #{$warning-color-shadow};
+
+  --error-color-normal: #{$error-color-normal};
+  --error-color-hover: #{$error-color-hover};
+  --error-color-shadow: #{$error-color-shadow};
+}
+
+.nes-ui-btn,
+.nes-ui-icon-btn {
+  line-height: 0.5rem;
+  padding: 0.5px 1px 1px 0.5px;
+}
+
+html.nes-ui {
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+  font-family: "Press Start 2P", monospace;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  line-height: 1.5;
+
+  * {
+    font-size: 0.75rem;
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: "Press Start 2P", monospace;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  // https://stackoverflow.com/questions/56300132/how-to-override-css-prefers-color-scheme-setting'
+  &.nes-ui-dark-mode {
+    background-color: var(--color-black-absolute);
+    color: var(--color-white-absolute);
+
+    body {
+      background-color: var(--color-black-absolute);
+      color: var(--color-white-absolute);
+    }
+  }
+}
