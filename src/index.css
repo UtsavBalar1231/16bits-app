@@ -65,13 +65,13 @@ header a:hover {
 }
 
 .nes-ui-dark-mode .logo {
-  filter: drop-shadow(0 0 1rem var(--primary-color-shadow));
-  fill: var(--primary-color-normal);
+  filter: drop-shadow(0 0 1rem var(--default-color-shadow));
+  fill: var(--default-color-normal);
 }
 
 .nes-ui-dark-mode .logo:hover {
-  filter: drop-shadow(0 0 1rem var(--default-color-shadow));
-  fill: var(--default-color-normal);
+  filter: drop-shadow(0 0 1rem var(--primary-color-shadow));
+  fill: var(--primary-color-normal);
 }
 
 .navigation-container {
