@@ -1,11 +1,13 @@
+import { Button } from "nes-ui-react";
 import Logo from "./Logo";
 import ShoppingCartLogo from "./ShoppingCartLogo";
-import { Button } from "nes-ui-react";
 
 interface headerProps {
   darkMode: boolean;
   toggleDarkMode: () => void;
 }
+
+function emptyFunction() {}
 
 function Header({ darkMode, toggleDarkMode }: headerProps) {
   return (
@@ -17,15 +19,20 @@ function Header({ darkMode, toggleDarkMode }: headerProps) {
         <nav className="nav-links">
           <a href="/docs">Docs</a>
           <a href="/about">About</a>
-          <a href="/groupbuy">Group Buy</a>
           <a href="/products">Products</a>
+          <a href="/checkout">Checkout</a>
         </nav>
         <div className="cart-container">
           <ShoppingCartLogo />
         </div>
-        <Button color="warning" borderInverted onClick={toggleDarkMode}>
-          <i className="fa-solid fa-moon"></i>
-        </Button>
+        <div className="header-buttons">
+          <Button color="warning" onClick={emptyFunction}>
+            Login
+          </Button>
+          <Button color="warning" onClick={toggleDarkMode}>
+            <i className="fa-solid fa-moon"></i>
+          </Button>
+        </div>
       </div>
     </header>
   );

@@ -16,21 +16,24 @@
   "devDependencies": {
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@typescript-eslint/eslint-plugin": "^7.15.0",
-    "@typescript-eslint/parser": "^7.15.0",
+    "@typescript-eslint/eslint-plugin": "^7.16.1",
+    "@typescript-eslint/parser": "^7.16.1",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.19",
     "css-loader": "^7.1.2",
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.2",
-    "eslint-plugin-react-refresh": "^0.4.7",
+    "eslint-plugin-react-refresh": "^0.4.8",
     "nes-ui-react": "^0.3.0",
+    "pixel-retroui": "^1.0.61",
     "postcss": "^8.4.39",
+    "react-router": "^6.25.1",
+    "react-router-dom": "^6.25.1",
     "sass": "^1.77.8",
     "sass-loader": "^14.2.1",
     "style-loader": "^4.0.0",
     "tailwindcss": "^3.4.6",
-    "typescript": "^5.2.2",
+    "typescript": "^5.5.3",
     "vite": "^5.3.4"
   }
 }

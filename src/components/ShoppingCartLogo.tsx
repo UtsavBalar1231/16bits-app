@@ -3,7 +3,6 @@ const cartLogo =
 
 function ShoppingCartLogo() {
   const handleClick = () => {
-    console.log("clicked");
     window.location.href = "/cart";
   };
 
