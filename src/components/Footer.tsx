@@ -1,15 +1,19 @@
 const LINKS = [
   {
     title: "Product",
-    items: ["Overview", "Features", "Solutions", "Tutorials"],
+    items: ["Overview", "Features", "Tutorials"],
   },
   {
     title: "Company",
-    items: ["About us", "Careers", "Press", "News"],
+    items: ["About us", "News", "GitHub"],
   },
   {
     title: "Resource",
-    items: ["Blog", "Newsletter", "Events", "Help center"],
+    items: ["Blog", "Docs", "Help center"],
+  },
+  {
+    title: "Social",
+    items: ["X", "Facebook", "Instagram"],
   },
 ];
 
@@ -24,10 +28,10 @@ function Footer() {
             key={link.title}
             className="sm:flex sm:items-center mb-4 sm:mb-0"
           >
-            <p className="text-sm font-semibold">{link.title}</p>
+            <p className="font-minecraft text-lg font-bold">{link.title}</p>
             <div className="sm:ml-4 sm:pl-4 sm:border-l sm:border-gray-300">
               {link.items.map((item) => (
-                <p key={item} className="text-sm leading-6">
+                <p key={item} className="text-sm fill-default-hover leading-6">
                   {item}
                 </p>
               ))}

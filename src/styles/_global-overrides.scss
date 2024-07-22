@@ -74,73 +74,73 @@ $error-colors: (
   shadow: $error-color-shadow,
 ) !default;
 
-$color-00: #504945 !default; // gruvbox material bg1
-$color-01: #282828 !default; // gruvbox material bg0
-$color-02: #3c3836 !default; // gruvbox material bg0_soft
-$color-03: #32302f !default; // gruvbox material bg0_hard
-$color-04: #9d0006 !default; // gruvbox material red
-$color-05: #cc241d !default; // gruvbox material red_light
-$color-06: #fb4934 !default; // gruvbox material red_dark
-$color-07: #b16139 !default; // gruvbox material orange
-$color-08: #d75f00 !default; // gruvbox material orange_light
-$color-09: #f78c6c !default; // gruvbox material orange_dark
-$color-0A: #af3a03 !default; // gruvbox material yellow
-$color-0B: #f4bc87 !default; // gruvbox material yellow_light
-$color-0C: #e7c547 !default; // gruvbox material yellow_dark
-$color-0D: #79740e !default; // gruvbox material green
-$color-0E: #b5bd68 !default; // gruvbox material green_light
-$color-0F: #f0f075 !default; // gruvbox material green_dark
-$color-10: #076678 !default; // gruvbox material aqua
-$color-11: #83a598 !default; // gruvbox material aqua_light
-$color-12: #8ec07c !default; // gruvbox material aqua_dark
-$color-13: #83a598 !default; // gruvbox material blue
-$color-14: #83a598 !default; // gruvbox material blue_light
-$color-15: #83a598 !default; // gruvbox material blue_dark
-$color-16: #204a87 !default; // gruvbox material purple
-$color-17: #b7b1c4 !default; // gruvbox material purple_light
-$color-18: #d3869b !default; // gruvbox material purple_dark
-$color-19: #98971a !default; // gruvbox material maroon
-$color-1A: #ebdbb2 !default; // gruvbox material maroon_light
-$color-1B: #fb4934 !default; // gruvbox material maroon_dark
-$color-1C: #b16139 !default; // gruvbox material fg1
-$color-1D: #a89984 !default; // gruvbox material fg0
-$color-1E: #928374 !default; // gruvbox material fg_dark
-$color-1F: #928374 !default; // gruvbox material fg_darker
-$color-20: #ebdbb2 !default; // gruvbox material grey_fg
-$color-21: #b7b1c4 !default; // gruvbox material grey_fg_light
-$color-22: #d3869b !default; // gruvbox material grey_fg_dark
-$color-23: #83a598 !default; // gruvbox material grey_fg_contrast
-$color-24: #83a598 !default; // gruvbox material grey_fg_contrast_light
-$color-25: #83a598 !default; // gruvbox material grey_fg_contrast_dark
-$color-26: #204a87 !default; // gruvbox material grey_emphasis
-$color-27: #b7b1c4 !default; // gruvbox material grey_emphasis_light
-$color-28: #d3869b !default; // gruvbox material grey_emphasis_dark
-$color-29: #83a598 !default; // gruvbox material comment
-$color-2A: #83a598 !default; // gruvbox material comment_fg
-$color-2B: #83a598 !default; // gruvbox material comment_fg_emphasis
-$color-2C: #83a598 !default; // gruvbox material comment_fg_contrast
-$color-2D: #83a598 !default; // gruvbox material comment_fg_contrast_light
-$color-2E: #83a598 !default; // gruvbox material comment_fg_contrast_dark
-$color-2F: #83a598 !default; // gruvbox material comment_del
-$color-30: #83a598 !default; // gruvbox material comment_del_fg
-$color-31: #83a598 !default; // gruvbox material comment_del_fg_emphasis
-$color-32: #83a598 !default; // gruvbox material comment_del_fg_contrast
-$color-33: #83a598 !default; // gruvbox material comment_del_fg_contrast_light
-$color-34: #83a598 !default; // gruvbox material comment_del_fg_contrast_dark
-$color-35: #83a598 !default; // gruvbox material comment_add
-$color-36: #83a598 !default; // gruvbox material comment_add_fg
-$color-37: #83a598 !default; // gruvbox material comment_add_fg_emphasis
-$color-38: #83a598 !default; // gruvbox material comment_add_fg_contrast
-$color-39: #83a598 !default; // gruvbox material comment_add_fg_contrast_light
-$color-3A: #83a598 !default; // gruvbox material comment_add_fg_contrast_dark
-$color-3B: #83a598 !default; // gruvbox material comment_str
-$color-3C: #83a598 !default; // gruvbox material comment_str_fg
-$color-3D: #83a598 !default; // gruvbox material comment_str_fg_emphasis
-$color-3E: #83a598 !default; // gruvbox material comment_str_fg_contrast
-$color-3F: #83a598 !default; // gruvbox material comment_str_fg_contrast_light
+$color-00: #504945 !default;
+$color-01: #282828 !default;
+$color-02: #3c3836 !default;
+$color-03: #32302f !default;
+$color-04: #9d0006 !default;
+$color-05: #cc241d !default;
+$color-06: #fb4934 !default;
+$color-07: #b16139 !default;
+$color-08: #d75f00 !default;
+$color-09: #f78c6c !default;
+$color-0A: #af3a03 !default;
+$color-0B: #f4bc87 !default;
+$color-0C: #e7c547 !default;
+$color-0D: #79740e !default;
+$color-0E: #b5bd68 !default;
+$color-0F: #f0f075 !default;
+$color-10: #076678 !default;
+$color-11: #83a598 !default;
+$color-12: #8ec07c !default;
+$color-13: #83a598 !default;
+$color-14: #83a598 !default;
+$color-15: #83a598 !default;
+$color-16: #204a87 !default;
+$color-17: #b7b1c4 !default;
+$color-18: #d3869b !default;
+$color-19: #98971a !default;
+$color-1A: #ebdbb2 !default;
+$color-1B: #fb4934 !default;
+$color-1C: #b16139 !default;
+$color-1D: #a89984 !default;
+$color-1E: #928374 !default;
+$color-1F: #928374 !default;
+$color-20: #ebdbb2 !default;
+$color-21: #b7b1c4 !default;
+$color-22: #d3869b !default;
+$color-23: #83a598 !default;
+$color-24: #83a598 !default;
+$color-25: #83a598 !default;
+$color-26: #204a87 !default;
+$color-27: #b7b1c4 !default;
+$color-28: #d3869b !default;
+$color-29: #83a598 !default;
+$color-2A: #83a598 !default;
+$color-2B: #83a598 !default;
+$color-2C: #83a598 !default;
+$color-2D: #83a598 !default;
+$color-2E: #83a598 !default;
+$color-2F: #83a598 !default;
+$color-30: #83a598 !default;
+$color-31: #83a598 !default;
+$color-32: #83a598 !default;
+$color-33: #83a598 !default;
+$color-34: #83a598 !default;
+$color-35: #83a598 !default;
+$color-36: #83a598 !default;
+$color-37: #83a598 !default;
+$color-38: #83a598 !default;
+$color-39: #83a598 !default;
+$color-3A: #83a598 !default;
+$color-3B: #83a598 !default;
+$color-3C: #83a598 !default;
+$color-3D: #83a598 !default;
+$color-3E: #83a598 !default;
+$color-3F: #83a598 !default;
 
 :root {
-  --font-family: "Space Mono";
+  --font-family: "Press Start 2P";
   --border-size: 4px;
   --font-size: 1rem;
 

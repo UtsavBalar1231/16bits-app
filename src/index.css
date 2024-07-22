@@ -34,43 +34,20 @@ header a:hover {
   color: var(--primary-color-normal) !important;
 }
 
-.nes-ui-dark-mode header a {
-  color: var(--default-color-normal) !important;
-}
-
-.nes-ui-dark-mode header a:hover {
-  color: var(--primary-color-normal) !important;
-}
-
 .navigation-container a:hover {
   color: var(--primary-color-normal);
 }
 
 .logo-container {
-  cursor: pointer;
   padding: 1rem;
 }
 
 .logo {
-  width: 100%;
-  height: 100%;
-  max-width: 64px;
   filter: drop-shadow(0 0 1rem var(--color-black));
   fill: var(--color-black-absolute);
-  transition-duration: 250ms;
 }
 
 .logo:hover {
-  filter: drop-shadow(0 0 1rem var(--primary-color-shadow));
-  fill: var(--primary-color-normal);
-}
-
-.nes-ui-dark-mode .logo {
-  filter: drop-shadow(0 0 1rem var(--default-color-shadow));
-  fill: var(--default-color-normal);
-}
-
-.nes-ui-dark-mode .logo:hover {
   filter: drop-shadow(0 0 1rem var(--primary-color-shadow));
   fill: var(--primary-color-normal);
 }
@@ -111,12 +88,31 @@ header a:hover {
   fill: var(--primary-color-normal);
 }
 
-.nes-ui-dark-mode .cart-logo {
-  fill: var(--default-color-normal);
-}
+.nes-ui-dark-mode {
+  header a {
+    color: var(--default-color-normal) !important;
+  }
 
-.nes-ui-dark-mode .cart-logo:hover {
-  fill: var(--primary-color-normal);
+  header a:hover {
+    color: var(--primary-color-normal) !important;
+  }
+  .logo {
+    filter: drop-shadow(0 0 1rem var(--default-color-shadow));
+    fill: var(--default-color-normal);
+  }
+
+  .logo:hover {
+    filter: drop-shadow(0 0 1rem var(--primary-color-shadow));
+    fill: var(--primary-color-normal);
+  }
+
+  .cart-logo {
+    fill: var(--default-color-normal);
+  }
+
+  .cart-logo:hover {
+    fill: var(--primary-color-normal);
+  }
 }
 
 main {

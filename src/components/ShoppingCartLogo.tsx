@@ -10,7 +10,7 @@ function ShoppingCartLogo() {
     <div onClick={handleClick}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="cart-logo"
+        className="w-full h-full max-w-[44px] transition-colors duration-250 cart-logo"
         viewBox="0 0 160 160"
         dangerouslySetInnerHTML={{ __html: cartLogo }}
       />
