@@ -1,0 +1,1054 @@
+[gd_scene load_steps=60 format=2]
+
+[ext_resource path="res://assets/sprites/VENDA/triangles01.png" type="Texture" id=6]
+[ext_resource path="res://shaders/Backgrounds.shader" type="Shader" id=10]
+[ext_resource path="res://palette/01.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/VENDA/circles04.png" type="Texture" id=12]
+[ext_resource path="res://palette/squares01.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/VENDA/squares01.png" type="Texture" id=15]
+[ext_resource path="res://palette/circles06.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/VENDA/squares03.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/VENDA/lines02.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/VENDA/Degrade01transparent.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/VENDA/Circles05.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/VENDA/Circles06.png" type="Texture" id=22]
+[ext_resource path="res://palette/pinkandgreen.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprites/VENDA/lines01.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprites/VENDA/tiles01.png" type="Texture" id=25]
+[ext_resource path="res://palette/02.png" type="Texture" id=26]
+[ext_resource path="res://Gradients/Gradient bluepink.tres" type="Gradient" id=27]
+[ext_resource path="res://assets/sprites/VENDA/weird03.png" type="Texture" id=28]
+[ext_resource path="res://assets/sprites/VENDA/kaleidoscope03.png" type="Texture" id=29]
+[ext_resource path="res://assets/sprites/VENDA/tiles05.png" type="Texture" id=30]
+[ext_resource path="res://palette/03.png" type="Texture" id=31]
+[ext_resource path="res://assets/sprites/VENDA/sea02.png" type="Texture" id=32]
+[ext_resource path="res://palette/sunlight.png" type="Texture" id=33]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0.224806, 0.271318, 0.658915, 1 )
+colors = PoolColorArray( 0.287491, 0.802452, 0.886719, 1, 0.630472, 0.326889, 0.753906, 1, 0.141602, 0.307541, 0.566406, 1, 0.30603, 0.851563, 0.813205, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 10 )
+shader_param/transparencia = 1.0
+shader_param/lines = 1
+shader_param/screen_height = 640.0
+shader_param/amplitude = 0.1
+shader_param/frequency = 0.1
+shader_param/speed = 0.1
+shader_param/amplitude_vertical = 0.4
+shader_param/frequency_vertical = 4.0
+shader_param/speed_vertical = 0.0
+shader_param/scroll_direction = Vector2( 1, 1 )
+shader_param/scrolling_speed = 0.1
+shader_param/enable_palette_cycling = true
+shader_param/palette_speed = 0.5
+shader_param/palette = SubResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 10 )
+shader_param/transparencia = 1.0
+shader_param/lines = 1
+shader_param/screen_height = 640.0
+shader_param/amplitude = 0.1
+shader_param/frequency = 0.1
+shader_param/speed = 0.0
+shader_param/amplitude_vertical = 0.215
+shader_param/frequency_vertical = 5.384
+shader_param/speed_vertical = 0.2
+shader_param/scroll_direction = Vector2( 1, 1 )
+shader_param/scrolling_speed = 0.1
+shader_param/enable_palette_cycling = true
+shader_param/palette_speed = 0.5
+shader_param/palette = SubResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = ExtResource( 10 )
+shader_param/transparencia = 1.0
+shader_param/lines = 1
+shader_param/screen_height = 256.0
+shader_param/amplitude = 0.0
+shader_param/frequency = 0.0
+shader_param/speed = 0.0
+shader_param/amplitude_vertical = 0.084
+shader_param/frequency_vertical = 10.441
+shader_param/speed_vertical = 0.2
+shader_param/scroll_direction = Vector2( 1, 1 )
+shader_param/scrolling_speed = 0.1
+shader_param/enable_palette_cycling = true
+shader_param/palette_speed = 0.5
+shader_param/palette = SubResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = ExtResource( 10 )
+shader_param/transparencia = 1.0
+shader_param/lines = 1
+shader_param/screen_height = 256.0
+shader_param/amplitude = 0.0
+shader_param/frequency = 0.0
+shader_param/speed = 0.0
+shader_param/amplitude_vertical = 0.084
+shader_param/frequency_vertical = 10.441
+shader_param/speed_vertical = 0.2
+shader_param/scroll_direction = Vector2( 1, 1 )
+shader_param/scrolling_speed = 0.1
+shader_param/enable_palette_cycling = true
+shader_param/palette_speed = 0.5
+shader_param/palette = ExtResource( 16 )
+
+[sub_resource type="Shader" id=7]
+code = "/* 
+Earthbound battle backgrounds shader with scrolling effect and palette cycling like in the original game.
+@retr0_dev
+	
+Apply the shader to a TextureRect or a Sprite. Use a texture with some shapes in a transparent background for best results.
+You can then use a ColorRect or another method to paint the background.
+You can use the shader on multiple TextureRects and obtain a double-buffer effect tweaking the values for each one, remember to Make Unique the shader material.
+*/
+shader_type canvas_item;
+//COLOR.a = 
+
+uniform int lines = 0;
+uniform float screen_height = 640.0;
+uniform float amplitude = 0.075;
+uniform float frequency = 10.0;
+uniform float speed = 2.0;
+uniform float amplitude_vertical = 0.0;
+uniform float frequency_vertical = 0.0;
+uniform float speed_vertical = 0.0;
+uniform vec2 scroll_direction = vec2(0.0, 0.0);
+uniform float scrolling_speed = 0.08;
+uniform bool enable_palette_cycling = false;
+uniform sampler2D palette;
+uniform float palette_speed = 0.1;
+
+void fragment()
+{
+	
+	    //ALPHA = 0.25;
+	float diff_x = amplitude * sin((frequency * UV.y) + (speed * TIME));
+	float diff_y = amplitude_vertical * sin((frequency_vertical * UV.y)  + (speed_vertical * TIME));
+	vec2 scroll = scroll_direction * TIME * scrolling_speed;
+	vec4 tex = texture(TEXTURE, vec2(UV.x + diff_x, UV.y + diff_y) + scroll);
+	float palette_swap = mod(tex.r - TIME * palette_speed, 1.0);
+	
+	if (enable_palette_cycling)
+	{
+		COLOR = vec4(texture(palette, vec2(palette_swap, 0)).rgb, tex.a);
+	}
+	else COLOR = tex;
+	if (lines >= 1)
+	{
+	COLOR = mix(vec4(0.0), COLOR, float(int(UV.y * screen_height) % 2));
+	}
+	//COLOR.a = 1;
+}"
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = SubResource( 7 )
+shader_param/lines = 0
+shader_param/screen_height = 256.0
+shader_param/amplitude = 0.069
+shader_param/frequency = 2.094
+shader_param/speed = 1.86
+shader_param/amplitude_vertical = 0.437
+shader_param/frequency_vertical = 0.822
+shader_param/speed_vertical = 0.0
+shader_param/scroll_direction = Vector2( 0, 0.5 )
+shader_param/scrolling_speed = 0.1
+shader_param/enable_palette_cycling = true
+shader_param/palette_speed = -0.3
+shader_param/palette = ExtResource( 23 )
+
+[sub_resource type="Shader" id=9]
+code = "/* 
+Earthbound battle backgrounds shader with scrolling effect and palette cycling like in the original game.
+@retr0_dev
+	
+Apply the shader to a TextureRect or a Sprite. Use a texture with some shapes in a transparent background for best results.
+You can then use a ColorRect or another method to paint the background.
+You can use the shader on multiple TextureRects and obtain a double-buffer effect tweaking the values for each one, remember to Make Unique the shader material.
+*/
+shader_type canvas_item;
+//COLOR.a = 
+
+uniform int lines = 0;
+uniform float screen_height = 640.0;
+uniform float amplitude = 0.075;
+uniform float frequency = 10.0;
+uniform float speed = 2.0;
+uniform float amplitude_vertical = 0.0;
+uniform float frequency_vertical = 0.0;
+uniform float speed_vertical = 0.0;
+uniform vec2 scroll_direction = vec2(0.0, 0.0);
+uniform float scrolling_speed = 0.08;
+uniform bool enable_palette_cycling = false;
+uniform sampler2D palette;
+uniform float palette_speed = 0.1;
+
+void fragment()
+{
+	
+	    //ALPHA = 0.25;
+	float diff_x = amplitude * sin((frequency * UV.y) + (speed * TIME));
+	float diff_y = amplitude_vertical * sin((frequency_vertical * UV.y)  + (speed_vertical * TIME));
+	vec2 scroll = scroll_direction * TIME * scrolling_speed;
+	vec4 tex = texture(TEXTURE, vec2(UV.x + diff_x, UV.y + diff_y) + scroll);
+	float palette_swap = mod(tex.r - TIME * palette_speed, 1.0);
+	
+	if (enable_palette_cycling)
+	{
+		COLOR = vec4(texture(palette, vec2(palette_swap, 0)).rgb, tex.a);
+	}
+	else COLOR = tex;
+	if (lines >= 1)
+	{
+	COLOR = mix(vec4(0.0), COLOR, float(int(UV.y * screen_height) % 2));
+	}
+	//COLOR.a = 1;
+}"
+
+[sub_resource type="ShaderMaterial" id=10]
+shader = SubResource( 9 )
+shader_param/lines = 1
+shader_param/screen_height = 256.0
+shader_param/amplitude = 0.18
+shader_param/frequency = 4.186
+shader_param/speed = 3.951
+shader_param/amplitude_vertical = -0.005
+shader_param/frequency_vertical = 1.139
+shader_param/speed_vertical = 0.5
+shader_param/scroll_direction = Vector2( 0, 0.5 )
+shader_param/scrolling_speed = 0.1
+shader_param/enable_palette_cycling = true
+shader_param/palette_speed = -0.2
+shader_param/palette = ExtResource( 23 )
+
+[sub_resource type="ShaderMaterial" id=11]
+shader = SubResource( 9 )
+shader_param/lines = 1
+shader_param/screen_height = 256.0
+shader_param/amplitude = 0.042
+shader_param/frequency = 3.49
+shader_param/speed = 5.0
+shader_param/amplitude_vertical = 0.143
+shader_param/frequency_vertical = 1.139
+shader_param/speed_vertical = 0.5
+shader_param/scroll_direction = Vector2( 1, 0.5 )
+shader_param/scrolling_speed = 0.1
+shader_param/enable_palette_cycling = true
+shader_param/palette_speed = -0.3
+shader_param/palette = ExtResource( 23 )
+
+[sub_resource type="ShaderMaterial" id=12]
+shader = SubResource( 9 )
+shader_param/lines = 1
+shader_param/screen_height = 256.0
+shader_param/amplitude = 0.015
+shader_param/frequency = 3.49
+shader_param/speed = 5.0
+shader_param/amplitude_vertical = 0.437
+shader_param/frequency_vertical = 0.822
+shader_param/speed_vertical = 0.0
+shader_param/scroll_direction = Vector2( 0, 0.5 )
+shader_param/scrolling_speed = 0.1
+shader_param/enable_palette_cycling = true
+shader_param/palette_speed = -0.3
+shader_param/palette = ExtResource( 23 )
+
+[sub_resource type="Gradient" id=13]
+offsets = PoolRealArray( 0, 0.248062, 0.697674, 1 )
+colors = PoolColorArray( 0, 0.0156863, 0.168627, 1, 0.621287, 0.254822, 0.652344, 1, 0.125732, 0.143106, 0.3125, 1, 0, 0.0156863, 0.168627, 1 )
+
+[sub_resource type="GradientTexture" id=14]
+gradient = SubResource( 13 )
+
+[sub_resource type="ShaderMaterial" id=15]
+shader = ExtResource( 10 )
+shader_param/transparencia = 1.0
+shader_param/lines = 1
+shader_param/screen_height = 256.0
+shader_param/amplitude = 0.825
+shader_param/frequency = 0.469
+shader_param/speed = 1.0
+shader_param/amplitude_vertical = 0.453
+shader_param/frequency_vertical = 1.676
+shader_param/speed_vertical = 1.343
+shader_param/scroll_direction = Vector2( 1, 1 )
+shader_param/scrolling_speed = 0.1
+shader_param/enable_palette_cycling = true
+shader_param/palette_speed = 0.1
+shader_param/palette = SubResource( 14 )
+
+[sub_resource type="GradientTexture" id=16]
+gradient = ExtResource( 27 )
+
+[sub_resource type="ShaderMaterial" id=17]
+shader = ExtResource( 10 )
+shader_param/transparencia = 1.0
+shader_param/lines = 0
+shader_param/screen_height = 256.0
+shader_param/amplitude = 0.0
+shader_param/frequency = 0.0
+shader_param/speed = 0.0
+shader_param/amplitude_vertical = 0.0
+shader_param/frequency_vertical = 0.0
+shader_param/speed_vertical = 0.0
+shader_param/scroll_direction = Vector2( 0, 0 )
+shader_param/scrolling_speed = 0.0
+shader_param/enable_palette_cycling = true
+shader_param/palette_speed = 0.2
+shader_param/palette = SubResource( 16 )
+
+[sub_resource type="GradientTexture" id=18]
+gradient = ExtResource( 27 )
+
+[sub_resource type="ShaderMaterial" id=19]
+shader = ExtResource( 10 )
+shader_param/transparencia = 1.0
+shader_param/lines = 1
+shader_param/screen_height = 256.0
+shader_param/amplitude = -0.045
+shader_param/frequency = 7.219
+shader_param/speed = 0.281
+shader_param/amplitude_vertical = 0.046
+shader_param/frequency_vertical = 3.782
+shader_param/speed_vertical = 1.901
+shader_param/scroll_direction = Vector2( 0, 0 )
+shader_param/scrolling_speed = 0.0
+shader_param/enable_palette_cycling = true
+shader_param/palette_speed = 0.8
+shader_param/palette = SubResource( 18 )
+
+[sub_resource type="ShaderMaterial" id=20]
+shader = ExtResource( 10 )
+shader_param/transparencia = 1.0
+shader_param/lines = 0
+shader_param/screen_height = 640.0
+shader_param/amplitude = 0.0
+shader_param/frequency = 0.0
+shader_param/speed = 0.0
+shader_param/amplitude_vertical = 0.618
+shader_param/frequency_vertical = 0.504
+shader_param/speed_vertical = 0.381
+shader_param/scroll_direction = Vector2( 0, 0 )
+shader_param/scrolling_speed = 0.0
+shader_param/enable_palette_cycling = true
+shader_param/palette_speed = 2.0
+shader_param/palette = ExtResource( 26 )
+
+[sub_resource type="GradientTexture" id=21]
+gradient = ExtResource( 27 )
+
+[sub_resource type="ShaderMaterial" id=22]
+shader = ExtResource( 10 )
+shader_param/transparencia = 1.0
+shader_param/lines = 1
+shader_param/screen_height = 256.0
+shader_param/amplitude = 1.0
+shader_param/frequency = 1.0
+shader_param/speed = 0.554
+shader_param/amplitude_vertical = 0.39
+shader_param/frequency_vertical = 10.0
+shader_param/speed_vertical = 1.023
+shader_param/scroll_direction = Vector2( 1, 1 )
+shader_param/scrolling_speed = 0.1
+shader_param/enable_palette_cycling = true
+shader_param/palette_speed = 0.2
+shader_param/palette = SubResource( 21 )
+
+[sub_resource type="ShaderMaterial" id=23]
+shader = ExtResource( 10 )
+shader_param/transparencia = 1.0
+shader_param/lines = 0
+shader_param/screen_height = 256.0
+shader_param/amplitude = 0.162
+shader_param/frequency = 0.144
+shader_param/speed = 0.232
+shader_param/amplitude_vertical = 0.131
+shader_param/frequency_vertical = 4.973
+shader_param/speed_vertical = 0.319
+shader_param/scroll_direction = Vector2( 0, 0 )
+shader_param/scrolling_speed = 0.1
+shader_param/enable_palette_cycling = true
+shader_param/palette_speed = 0.1
+shader_param/palette = SubResource( 21 )
+
+[sub_resource type="ShaderMaterial" id=24]
+shader = ExtResource( 10 )
+shader_param/transparencia = 1.0
+shader_param/lines = 1
+shader_param/screen_height = 256.0
+shader_param/amplitude = 1.098
+shader_param/frequency = 1.0
+shader_param/speed = 0.554
+shader_param/amplitude_vertical = 0.461
+shader_param/frequency_vertical = 10.0
+shader_param/speed_vertical = 1.023
+shader_param/scroll_direction = Vector2( 1, 1 )
+shader_param/scrolling_speed = 0.1
+shader_param/enable_palette_cycling = true
+shader_param/palette_speed = 0.1
+shader_param/palette = SubResource( 21 )
+
+[sub_resource type="ShaderMaterial" id=25]
+shader = ExtResource( 10 )
+shader_param/transparencia = 1.0
+shader_param/lines = 0
+shader_param/screen_height = 256.0
+shader_param/amplitude = 0.561
+shader_param/frequency = 2.616
+shader_param/speed = 0.735
+shader_param/amplitude_vertical = 0.124
+shader_param/frequency_vertical = 2.122
+shader_param/speed_vertical = 1.0
+shader_param/scroll_direction = Vector2( 0.5, 0 )
+shader_param/scrolling_speed = 0.5
+shader_param/enable_palette_cycling = true
+shader_param/palette_speed = 0.7
+shader_param/palette = ExtResource( 33 )
+
+[sub_resource type="ShaderMaterial" id=26]
+shader = ExtResource( 10 )
+shader_param/transparencia = 1.0
+shader_param/lines = 0
+shader_param/screen_height = 256.0
+shader_param/amplitude = 0.0
+shader_param/frequency = 0.0
+shader_param/speed = 0.0
+shader_param/amplitude_vertical = 0.124
+shader_param/frequency_vertical = 2.122
+shader_param/speed_vertical = 1.0
+shader_param/scroll_direction = Vector2( 1, 0 )
+shader_param/scrolling_speed = 0.0
+shader_param/enable_palette_cycling = true
+shader_param/palette_speed = 0.7
+shader_param/palette = ExtResource( 14 )
+
+[sub_resource type="ShaderMaterial" id=27]
+shader = ExtResource( 10 )
+shader_param/transparencia = 1.0
+shader_param/lines = 0
+shader_param/screen_height = 640.0
+shader_param/amplitude = 0.379
+shader_param/frequency = 0.886
+shader_param/speed = 0.613
+shader_param/amplitude_vertical = 0.0
+shader_param/frequency_vertical = 0.0
+shader_param/speed_vertical = 0.0
+shader_param/scroll_direction = Vector2( 0.5, 0 )
+shader_param/scrolling_speed = 0.1
+shader_param/enable_palette_cycling = true
+shader_param/palette_speed = 1.5
+shader_param/palette = ExtResource( 11 )
+
+[sub_resource type="ShaderMaterial" id=28]
+shader = ExtResource( 10 )
+shader_param/transparencia = 1.0
+shader_param/lines = 0
+shader_param/screen_height = 640.0
+shader_param/amplitude = 0.278
+shader_param/frequency = 0.537
+shader_param/speed = 0.519
+shader_param/amplitude_vertical = 0.0
+shader_param/frequency_vertical = 0.0
+shader_param/speed_vertical = 0.0
+shader_param/scroll_direction = Vector2( 0.3, 0 )
+shader_param/scrolling_speed = 0.1
+shader_param/enable_palette_cycling = true
+shader_param/palette_speed = 1.5
+shader_param/palette = ExtResource( 31 )
+
+[sub_resource type="ShaderMaterial" id=29]
+shader = ExtResource( 10 )
+shader_param/transparencia = 1.0
+shader_param/lines = 0
+shader_param/screen_height = 640.0
+shader_param/amplitude = 0.084
+shader_param/frequency = 6.894
+shader_param/speed = 0.534
+shader_param/amplitude_vertical = 0.0
+shader_param/frequency_vertical = 0.0
+shader_param/speed_vertical = 0.0
+shader_param/scroll_direction = Vector2( 0.5, 0 )
+shader_param/scrolling_speed = 0.0
+shader_param/enable_palette_cycling = true
+shader_param/palette_speed = 1.5
+shader_param/palette = ExtResource( 31 )
+
+[sub_resource type="Gradient" id=30]
+offsets = PoolRealArray( 0, 0.362963, 0.585185, 0.881481 )
+colors = PoolColorArray( 0.578125, 0.0135498, 0.0135498, 1, 1, 0.449219, 0.449219, 1, 0.648438, 0.29129, 0.29129, 1, 0.546875, 0.0683594, 0.0683594, 1 )
+
+[sub_resource type="GradientTexture" id=31]
+gradient = SubResource( 30 )
+
+[sub_resource type="ShaderMaterial" id=32]
+shader = ExtResource( 10 )
+shader_param/transparencia = 1.0
+shader_param/lines = 0
+shader_param/screen_height = 256.0
+shader_param/amplitude = 2.0
+shader_param/frequency = 1.0
+shader_param/speed = 0.5
+shader_param/amplitude_vertical = 0.2
+shader_param/frequency_vertical = 2.0
+shader_param/speed_vertical = 0.2
+shader_param/scroll_direction = Vector2( 0.5, 0.5 )
+shader_param/scrolling_speed = 0.8
+shader_param/enable_palette_cycling = true
+shader_param/palette_speed = 0.4
+shader_param/palette = SubResource( 31 )
+
+[sub_resource type="Gradient" id=33]
+offsets = PoolRealArray( 0, 0.356589, 0.658915, 1 )
+colors = PoolColorArray( 0, 0.466667, 0.607843, 1, 0.739212, 0.335358, 0.773438, 1, 0.231689, 0.8125, 0.8125, 1, 0, 0.466667, 0.607843, 1 )
+
+[sub_resource type="GradientTexture" id=34]
+gradient = SubResource( 33 )
+
+[sub_resource type="ShaderMaterial" id=35]
+shader = ExtResource( 10 )
+shader_param/transparencia = 1.0
+shader_param/lines = 0
+shader_param/screen_height = 256.0
+shader_param/amplitude = -0.045
+shader_param/frequency = 7.219
+shader_param/speed = 0.281
+shader_param/amplitude_vertical = 0.046
+shader_param/frequency_vertical = 3.782
+shader_param/speed_vertical = 0.0
+shader_param/scroll_direction = Vector2( 0, 0 )
+shader_param/scrolling_speed = 0.0
+shader_param/enable_palette_cycling = true
+shader_param/palette_speed = -0.1
+shader_param/palette = SubResource( 34 )
+
+[sub_resource type="ShaderMaterial" id=36]
+shader = ExtResource( 10 )
+shader_param/transparencia = 1.0
+shader_param/lines = 1
+shader_param/screen_height = 256.0
+shader_param/amplitude = -0.045
+shader_param/frequency = 7.219
+shader_param/speed = 0.281
+shader_param/amplitude_vertical = 0.046
+shader_param/frequency_vertical = 3.782
+shader_param/speed_vertical = 0.0
+shader_param/scroll_direction = Vector2( 0, 0 )
+shader_param/scrolling_speed = 0.0
+shader_param/enable_palette_cycling = true
+shader_param/palette_speed = 0.8
+shader_param/palette = ExtResource( 23 )
+
+[node name="Scene Test" type="CanvasLayer"]
+
+[node name="BACKGROUNDS" type="TextureRect" parent="."]
+margin_left = -4.0
+margin_top = -5.0
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shaders" type="TextureRect" parent="BACKGROUNDS"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1" type="TextureRect" parent="BACKGROUNDS/Shaders"]
+margin_left = 1.32039
+margin_top = 3.08089
+margin_right = 41.3204
+margin_bottom = 43.0809
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="BACKGROUNDS/Shaders/1"]
+margin_left = -48.1629
+margin_top = -28.541
+margin_right = 327.837
+margin_bottom = 279.459
+color = Color( 0.211716, 0.237443, 0.488281, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="BACKGROUNDS/Shaders/1"]
+visible = false
+material = SubResource( 3 )
+margin_right = 256.0
+margin_bottom = 256.0
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect9" type="TextureRect" parent="BACKGROUNDS/Shaders/1"]
+visible = false
+material = SubResource( 4 )
+margin_right = 256.0
+margin_bottom = 256.0
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect8" type="TextureRect" parent="BACKGROUNDS/Shaders/1"]
+visible = false
+material = SubResource( 5 )
+margin_right = 256.0
+margin_bottom = 256.0
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect10" type="TextureRect" parent="BACKGROUNDS/Shaders/1"]
+material = SubResource( 6 )
+margin_left = -38.0364
+margin_top = -13.0632
+margin_right = 290.964
+margin_bottom = 277.936
+texture = ExtResource( 12 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2" type="TextureRect" parent="BACKGROUNDS/Shaders"]
+visible = false
+margin_left = 1.32039
+margin_top = 3.08089
+margin_right = 41.3204
+margin_bottom = 43.0809
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="BACKGROUNDS/Shaders/2"]
+material = SubResource( 8 )
+margin_left = -6.72717
+margin_top = -10.9317
+margin_right = 316.273
+margin_bottom = 305.068
+texture = ExtResource( 22 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect12" type="TextureRect" parent="BACKGROUNDS/Shaders/2/TextureRect"]
+material = SubResource( 10 )
+margin_left = 1.0
+margin_top = -2.0
+margin_right = 328.0
+margin_bottom = 320.0
+texture = ExtResource( 21 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect15" type="TextureRect" parent="BACKGROUNDS/Shaders/2/TextureRect"]
+material = SubResource( 10 )
+margin_left = 1.0
+margin_top = -1.0
+margin_right = 320.0
+margin_bottom = 294.0
+texture = ExtResource( 21 )
+stretch_mode = 2
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3" type="TextureRect" parent="BACKGROUNDS/Shaders"]
+visible = false
+margin_left = 1.32039
+margin_top = 3.08089
+margin_right = 41.3204
+margin_bottom = 43.0809
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="BACKGROUNDS/Shaders/3"]
+material = SubResource( 8 )
+margin_left = -39.1407
+margin_top = -27.3677
+margin_right = 365.859
+margin_bottom = 377.632
+texture = ExtResource( 22 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect12" type="TextureRect" parent="BACKGROUNDS/Shaders/3/TextureRect3"]
+material = SubResource( 11 )
+margin_left = 1.0
+margin_top = 2.23782
+margin_right = 332.0
+margin_bottom = 299.238
+texture = ExtResource( 21 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect15" type="TextureRect" parent="BACKGROUNDS/Shaders/3/TextureRect3"]
+material = SubResource( 11 )
+margin_left = -0.0594482
+margin_top = 2.17838
+margin_right = 327.941
+margin_bottom = 299.178
+texture = ExtResource( 21 )
+stretch_mode = 2
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="4" type="TextureRect" parent="BACKGROUNDS/Shaders"]
+visible = false
+margin_left = 1.32039
+margin_top = 3.08089
+margin_right = 41.3204
+margin_bottom = 43.0809
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="BACKGROUNDS/Shaders/4"]
+material = SubResource( 8 )
+margin_left = -27.5123
+margin_top = -19.2159
+margin_right = 387.488
+margin_bottom = 300.784
+texture = ExtResource( 22 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect12" type="TextureRect" parent="BACKGROUNDS/Shaders/4/TextureRect2"]
+material = SubResource( 12 )
+margin_left = 1.0
+margin_top = -2.0
+margin_right = 305.0
+margin_bottom = 280.0
+texture = ExtResource( 21 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect15" type="TextureRect" parent="BACKGROUNDS/Shaders/4/TextureRect2"]
+material = SubResource( 12 )
+margin_left = -8.6703
+margin_top = -1.0
+margin_right = 256.33
+margin_bottom = 264.0
+texture = ExtResource( 21 )
+stretch_mode = 2
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="5" type="TextureRect" parent="BACKGROUNDS/Shaders"]
+visible = false
+margin_left = -4.68639
+margin_top = 1.07863
+margin_right = 35.3136
+margin_bottom = 41.0786
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="BACKGROUNDS/Shaders/5"]
+margin_left = -50.7239
+margin_top = -42.0475
+margin_right = 335.276
+margin_bottom = 266.953
+color = Color( 0, 0.0156863, 0.168627, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect15" type="TextureRect" parent="BACKGROUNDS/Shaders/5"]
+material = SubResource( 15 )
+margin_right = 282.0
+margin_bottom = 268.0
+texture = ExtResource( 20 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect16" type="TextureRect" parent="BACKGROUNDS/Shaders/5"]
+material = SubResource( 15 )
+margin_left = -11.2401
+margin_top = -9.11012
+margin_right = 279.76
+margin_bottom = 255.89
+texture = ExtResource( 20 )
+stretch_mode = 2
+flip_h = true
+flip_v = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="6" type="TextureRect" parent="BACKGROUNDS/Shaders"]
+visible = false
+margin_left = 1.32039
+margin_top = 3.08089
+margin_right = 41.3204
+margin_bottom = 43.0809
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect14" type="TextureRect" parent="BACKGROUNDS/Shaders/6"]
+material = SubResource( 17 )
+margin_left = -15.9692
+margin_top = -25.4891
+margin_right = 314.031
+margin_bottom = 275.511
+texture = ExtResource( 22 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect15" type="TextureRect" parent="BACKGROUNDS/Shaders/6"]
+material = SubResource( 19 )
+margin_left = 3.99997
+margin_top = -13.2996
+margin_right = 272.0
+margin_bottom = 254.7
+texture = ExtResource( 29 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="7" type="TextureRect" parent="BACKGROUNDS/Shaders"]
+visible = false
+material = SubResource( 20 )
+margin_left = -1.77975
+margin_top = -12.2292
+margin_right = 274.22
+margin_bottom = 263.771
+texture = ExtResource( 24 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="8" type="TextureRect" parent="BACKGROUNDS/Shaders"]
+visible = false
+margin_left = 1.32039
+margin_top = 3.08089
+margin_right = 41.3204
+margin_bottom = 43.0809
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="BACKGROUNDS/Shaders/8"]
+visible = false
+margin_left = -40.3204
+margin_top = -31.0809
+margin_right = 315.68
+margin_bottom = 404.919
+color = Color( 0, 0.466667, 0.607843, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect12" type="TextureRect" parent="BACKGROUNDS/Shaders/8"]
+visible = false
+material = SubResource( 22 )
+margin_right = 256.0
+margin_bottom = 256.0
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect14" type="TextureRect" parent="BACKGROUNDS/Shaders/8"]
+material = SubResource( 23 )
+margin_left = -19.9858
+margin_top = -39.3354
+margin_right = 276.014
+margin_bottom = 256.665
+texture = ExtResource( 19 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect13" type="TextureRect" parent="BACKGROUNDS/Shaders/8"]
+visible = false
+material = SubResource( 24 )
+margin_left = 7.0
+margin_top = -6.0
+margin_right = 263.0
+margin_bottom = 250.0
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="9" type="TextureRect" parent="BACKGROUNDS/Shaders"]
+visible = false
+material = SubResource( 25 )
+margin_left = -16.4614
+margin_top = -28.748
+margin_right = 280.539
+margin_bottom = 268.252
+texture = ExtResource( 32 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="10" type="TextureRect" parent="BACKGROUNDS/Shaders"]
+visible = false
+material = SubResource( 26 )
+margin_left = -7.73071
+margin_top = -10.4929
+margin_right = 288.269
+margin_bottom = 285.507
+texture = ExtResource( 15 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="11" type="TextureRect" parent="BACKGROUNDS/Shaders"]
+visible = false
+margin_left = 1.32039
+margin_top = 3.08089
+margin_right = 41.3204
+margin_bottom = 43.0809
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="BACKGROUNDS/Shaders/11"]
+margin_left = -40.3204
+margin_top = -31.0809
+margin_right = 315.68
+margin_bottom = 404.919
+color = Color( 0, 0.466667, 0.607843, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect12" type="TextureRect" parent="BACKGROUNDS/Shaders/11"]
+material = SubResource( 22 )
+margin_left = -22.2236
+margin_top = -17.4614
+margin_right = 302.776
+margin_bottom = 285.539
+texture = ExtResource( 18 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="12" type="TextureRect" parent="BACKGROUNDS/Shaders"]
+visible = false
+material = SubResource( 27 )
+margin_left = -25.9858
+margin_top = -14.4614
+margin_right = 308.014
+margin_bottom = 270.539
+texture = ExtResource( 25 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="13" type="TextureRect" parent="BACKGROUNDS/Shaders"]
+visible = false
+material = SubResource( 28 )
+margin_left = -13.8651
+margin_top = -9.48666
+margin_right = 297.135
+margin_bottom = 271.513
+texture = ExtResource( 25 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect12" type="TextureRect" parent="BACKGROUNDS/Shaders/13"]
+material = SubResource( 29 )
+margin_left = 12.2972
+margin_top = 2.08093
+margin_right = 301.297
+margin_bottom = 273.081
+texture = ExtResource( 30 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="14" type="TextureRect" parent="BACKGROUNDS/Shaders"]
+visible = false
+material = SubResource( 32 )
+margin_left = -20.8112
+margin_top = -10.1083
+margin_right = 294.189
+margin_bottom = 268.892
+texture = ExtResource( 6 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="15" type="TextureRect" parent="BACKGROUNDS/Shaders"]
+visible = false
+margin_left = 1.32039
+margin_top = 3.08089
+margin_right = 41.3204
+margin_bottom = 43.0809
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect15" type="TextureRect" parent="BACKGROUNDS/Shaders/15"]
+material = SubResource( 35 )
+margin_left = -15.0003
+margin_top = -17.2975
+margin_right = 314.0
+margin_bottom = 271.703
+texture = ExtResource( 22 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect16" type="TextureRect" parent="BACKGROUNDS/Shaders/15"]
+material = SubResource( 36 )
+margin_left = 0.35144
+margin_top = -6.62158
+margin_right = 296.351
+margin_bottom = 264.378
+texture = ExtResource( 28 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,18 +1,14 @@
 @import "nes-ui-react";
 
-// shaded black and white (anachronistic vibe)
 $color-black: #1d2021 !default;
 $color-white: #ddc7a1 !default;
 
-// absolute black and white
 $color-black-absolute: #141617 !default;
 $color-white-absolute: #f9f5d7 !default;
 
-// contrast alpha colors (used for scrollbar)
 $contrast-alpha-color-normal: $color-black !default;
 $contrast-alpha-color-shadow: #99999933 !default;
 
-// named colors
 $default-color-normal: $color-white !default;
 $default-color-hover: #d4be98 !default;
 $default-color-shadow: #a89984 !default;
@@ -206,7 +202,6 @@ html.nes-ui {
     line-height: 1.5;
   }
 
-  // https://stackoverflow.com/questions/56300132/how-to-override-css-prefers-color-scheme-setting'
   &.nes-ui-dark-mode {
     background-color: var(--color-black-absolute);
     color: var(--color-white-absolute);
@@ -219,21 +214,25 @@ html.nes-ui {
       border-color: var(--color-black-absolute);
       border-image-source: var(--pixel-borders-image-1-color-black-absolute);
     }
+    .nes-ui-button-wrapper.nes-ui-border-inverted,
+    .nes-ui-icon-button-wrapper.nes-ui-border-inverted {
+      border-image-source: var(--pixel-borders-image-1-color-black-absolute);
+    }
   }
 
-  .nes-ui-btn.nes-ui-btn-warning,
-  .nes-ui-icon-btn.nes-ui-btn-warning {
+  .nes-ui-btn.nes-ui-btn,
+  .nes-ui-icon-btn.nes-ui-btn {
     color: var(--color-black);
     background-color: var(--default-color-normal);
   }
 
-  .nes-ui-btn.nes-ui-btn-warning:hover,
-  .nes-ui-icon-btn.nes-ui-btn-warning:hover {
+  .nes-ui-btn.nes-ui-btn:hover,
+  .nes-ui-icon-btn.nes-ui-btn:hover {
     background-color: var(--default-color-hover);
   }
 
-  .nes-ui-btn.nes-ui-btn-warning::after,
-  .nes-ui-icon-btn.nes-ui-btn-warning::after {
+  .nes-ui-btn.nes-ui-btn::after,
+  .nes-ui-icon-btn.nes-ui-btn::after {
     box-shadow: inset -4px -4px var(--default-color-shadow);
   }
 }
@@ -254,12 +253,12 @@ html.nes-ui {
   background-color: var(--color-white-absolute);
 }
 
-.nes-ui-btn.nes-ui-btn-warning,
-.nes-ui-icon-btn.nes-ui-btn-warning {
+.nes-ui-btn.nes-ui-btn,
+.nes-ui-icon-btn.nes-ui-btn {
   background-color: var(--color-white);
 }
 
-.nes-ui-btn.nes-ui-btn-warning:hover,
-.nes-ui-icon-btn.nes-ui-btn-warning:hover {
+.nes-ui-btn.nes-ui-btn:hover,
+.nes-ui-icon-btn.nes-ui-btn:hover {
   background-color: var(--color-white-absolute);
 }

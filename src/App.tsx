@@ -5,7 +5,7 @@ import Main from "./components/Main";
 import Footer from "./components/Footer";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
   const toggleDarkMode = useCallback(() => {
     setDarkMode(!darkMode);
   }, [darkMode]);
@@ -14,11 +14,17 @@ function App() {
 
   return (
     <>
-      <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-
-      <Main />
-
-      <Footer />
+      <div className="pt-[4rem] lg:pt-[4rem] overflow-hidden">
+        <div
+          className={`${
+            darkMode ? "bg-black-absolute" : "bg-white-absolute"
+          } relative h-full overflow-y-auto bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:32px_32px]`}
+        >
+          <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+          {/* <Main /> */}
+          {/* <Footer darkMode={darkMode} /> */}
+        </div>
+      </div>
     </>
   );
 }

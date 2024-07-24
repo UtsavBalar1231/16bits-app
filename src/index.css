@@ -1,144 +1,18 @@
 @import url("./styles/fonts.css");
 @import url("./styles/_global-overrides.scss");
+@import "pixel-retroui/dist/index.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-}
-
-header a {
-  color: var(--color-black-absolute) !important;
-  text-decoration: none;
-  font-family: Tiny5, monospace;
-  font-size: 1rem !important;
-  line-height: 2rem;
-}
-
-header a:hover {
-  color: var(--primary-color-normal) !important;
-}
-
-.navigation-container a:hover {
-  color: var(--primary-color-normal);
-}
-
-.logo-container {
-  padding: 1rem;
-}
-
-.logo {
-  filter: drop-shadow(0 0 1rem var(--color-black));
-  fill: var(--color-black-absolute);
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 1rem var(--primary-color-shadow));
-  fill: var(--primary-color-normal);
-}
-
-.header-buttons {
-  display: flex;
-  align-items: center;
-  margin-left: 0;
-  gap: 1rem;
-}
-
-.navigation-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.nav-links {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.cart-container {
-  padding: 1rem;
-}
-
-.cart-logo {
-  width: 100%;
-  height: 100%;
-  max-width: 44px;
-  fill: var(--color-black-absolute);
-  transition-duration: 250ms;
-}
-
-.cart-logo:hover {
-  fill: var(--primary-color-normal);
-}
-
-.nes-ui-dark-mode {
-  header a {
-    color: var(--default-color-normal) !important;
-  }
-
-  header a:hover {
-    color: var(--primary-color-normal) !important;
-  }
-  .logo {
-    filter: drop-shadow(0 0 1rem var(--default-color-shadow));
-    fill: var(--default-color-normal);
-  }
-
-  .logo:hover {
-    filter: drop-shadow(0 0 1rem var(--primary-color-shadow));
-    fill: var(--primary-color-normal);
-  }
-
-  .cart-logo {
-    fill: var(--default-color-normal);
-  }
-
-  .cart-logo:hover {
-    fill: var(--primary-color-normal);
-  }
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  gap: 1rem;
-}
-
-@media (min-width: 600px) {
-  header {
-    flex-direction: row;
-  }
-
-  .navigation-container {
-    flex-direction: row;
-  }
-
-  .nav-links {
-    flex-direction: row;
-  }
-
-  .cart-container {
-    margin-left: 0;
-    margin-top: 1rem;
-  }
+	margin: 0 auto;
+	text-align: center;
 }
