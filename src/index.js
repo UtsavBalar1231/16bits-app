@@ -8,7 +8,7 @@ import Checkout from "./components/Checkout.tsx";
 import Products from "./components/Products.tsx";
 import "nes.icons/css/nes-icons.min.css";
 import "nes.css/css/nes.min.css";
-import "./index.css";
+import "./index.scss";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([

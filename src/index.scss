@@ -1,0 +1,302 @@
+@charset "utf-8";
+
+@import "./styles/fonts.css";
+@import "pixel-retroui/dist/index.css";
+@import "nes-ui-react";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$color-black: #1d2021 !important;
+$color-white: #ddc7a1 !important;
+
+$color-black-absolute: #141617 !important;
+$color-white-absolute: #f9f5d7 !important;
+$color-white-absolute-shadow: #f2e5bc !important;
+
+$contrast-alpha-color-normal: $color-black !important;
+$contrast-alpha-color-shadow: #99999933 !important;
+
+$default-color-normal: #ddc7a1 !important;
+$default-color-hover: #d4be98 !important;
+$default-color-shadow: #a89984 !important;
+
+$disabled-color-normal: #32302f !important;
+$disabled-color-shadow: #adafbc !important;
+
+$primary-color-normal: #7daea3 !important;
+$primary-color-hover: #73a197 !important;
+$primary-color-shadow: #45707a !important;
+
+$success-color-normal: #a9b665 !important;
+$success-color-hover: #98a35d !important;
+$success-color-shadow: #6c782e !important;
+
+$warning-color-normal: #d8a657 !important;
+$warning-color-hover: #c99b50 !important;
+$warning-color-shadow: #b47107 !important;
+
+$error-color-normal: #ea6962 !important;
+$error-color-hover: #df645e !important;
+$error-color-shadow: #c14a4a !important;
+
+$base-color: $color-black !important;
+$background-color: $color-white !important;
+
+$default-colors: (
+  normal: $default-color-normal,
+  hover: $default-color-hover,
+  shadow: $default-color-shadow,
+) !important;
+
+$disabled-colors: (
+  normal: $disabled-color-normal,
+  shadow: $disabled-color-shadow,
+) !important;
+
+$primary-colors: (
+  normal: $primary-color-normal,
+  hover: $primary-color-hover,
+  shadow: $primary-color-shadow,
+) !important;
+
+$success-colors: (
+  normal: $success-color-normal,
+  hover: $success-color-hover,
+  shadow: $success-color-shadow,
+) !important;
+
+$warning-colors: (
+  normal: $warning-color-normal,
+  hover: $warning-color-hover,
+  shadow: $warning-color-shadow,
+) !important;
+
+$error-colors: (
+  normal: $error-color-normal,
+  hover: $error-color-hover,
+  shadow: $error-color-shadow,
+) !important;
+
+$color-00: #504945 !important;
+$color-01: #282828 !important;
+$color-02: #3c3836 !important;
+$color-03: #32302f !important;
+$color-04: #9d0006 !important;
+$color-05: #cc241d !important;
+$color-06: #fb4934 !important;
+$color-07: #b16139 !important;
+$color-08: #d75f00 !important;
+$color-09: #f78c6c !important;
+$color-0A: #af3a03 !important;
+$color-0B: #f4bc87 !important;
+$color-0C: #e7c547 !important;
+$color-0D: #79740e !important;
+$color-0E: #b5bd68 !important;
+$color-0F: #f0f075 !important;
+$color-10: #076678 !important;
+$color-11: #83a598 !important;
+$color-12: #8ec07c !important;
+$color-13: #83a598 !important;
+$color-14: #83a598 !important;
+$color-15: #83a598 !important;
+$color-16: #204a87 !important;
+$color-17: #b7b1c4 !important;
+$color-18: #d3869b !important;
+$color-19: #98971a !important;
+$color-1A: #ebdbb2 !important;
+$color-1B: #fb4934 !important;
+$color-1C: #b16139 !important;
+$color-1D: #a89984 !important;
+$color-1E: #928374 !important;
+$color-1F: #928374 !important;
+$color-20: #ebdbb2 !important;
+$color-21: #b7b1c4 !important;
+$color-22: #d3869b !important;
+$color-23: #83a598 !important;
+$color-24: #83a598 !important;
+$color-25: #83a598 !important;
+$color-26: #204a87 !important;
+$color-27: #b7b1c4 !important;
+$color-28: #d3869b !important;
+$color-29: #83a598 !important;
+$color-2A: #83a598 !important;
+$color-2B: #83a598 !important;
+$color-2C: #83a598 !important;
+$color-2D: #83a598 !important;
+$color-2E: #83a598 !important;
+$color-2F: #83a598 !important;
+$color-30: #83a598 !important;
+$color-31: #83a598 !important;
+$color-32: #83a598 !important;
+$color-33: #83a598 !important;
+$color-34: #83a598 !important;
+$color-35: #83a598 !important;
+$color-36: #83a598 !important;
+$color-37: #83a598 !important;
+$color-38: #83a598 !important;
+$color-39: #83a598 !important;
+$color-3A: #83a598 !important;
+$color-3B: #83a598 !important;
+$color-3C: #83a598 !important;
+$color-3D: #83a598 !important;
+$color-3E: #83a598 !important;
+$color-3F: #83a598 !important;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  margin: 0 auto;
+  text-align: center;
+}
+
+:root {
+  --font-family: "Press Start 2P";
+  --border-size: 4px;
+  --font-size: 1rem;
+
+  --background-color: #{$color-white-absolute};
+  --color-white: #{$color-white};
+  --color-black: #{$color-black};
+
+  --color-black-absolute: #{$color-black-absolute};
+  --color-white-absolute: #{$color-white-absolute};
+  --color-white-absolute-shadow: #{$color-white-absolute-shadow};
+
+  --contrast-alpha-color-normal: #{$contrast-alpha-color-normal};
+  --contrast-alpha-color-shadow: #{$contrast-alpha-color-shadow};
+
+  --default-color-normal: #{$default-color-normal};
+  --default-color-hover: #{$default-color-hover};
+  --default-color-shadow: #{$default-color-shadow};
+
+  --disabled-color-normal: #{$disabled-color-normal};
+  --disabled-color-shadow: #{$disabled-color-shadow};
+
+  --primary-color-normal: #{$primary-color-normal};
+  --primary-color-hover: #{$primary-color-hover};
+  --primary-color-shadow: #{$primary-color-shadow};
+
+  --success-color-normal: #{$success-color-normal};
+  --success-color-hover: #{$success-color-hover};
+  --success-color-shadow: #{$success-color-shadow};
+
+  --warning-color-normal: #{$warning-color-normal};
+  --warning-color-hover: #{$warning-color-hover};
+  --warning-color-shadow: #{$warning-color-shadow};
+
+  --error-color-normal: #{$error-color-normal};
+  --error-color-hover: #{$error-color-hover};
+  --error-color-shadow: #{$error-color-shadow};
+}
+
+.nes-ui-btn,
+.nes-ui-icon-btn {
+  line-height: 0.5rem;
+  padding: 0.5px 1px 1px 0.5px;
+}
+
+html.nes-ui {
+  font-size: 1rem;
+
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: "Press Start 2P", monospace;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  &.nes-ui-dark-mode {
+    background-color: var(--color-black-absolute);
+    color: var(--color-white-absolute);
+
+    .nes-ui-button-wrapper.nes-ui-border-inverted {
+      border-color: var(--color-black-absolute);
+      border-image-source: var(--pixel-borders-image-1-color-black-absolute);
+    }
+
+    .nes-ui-button-wrapper.nes-ui-border-inverted,
+    .nes-ui-icon-button-wrapper.nes-ui-border-inverted {
+      border-image-source: var(--pixel-borders-image-1-color-black-absolute);
+    }
+
+    .nes-ui-text.nes-ui-is-disabled {
+      color: var(--disabled-color-normal);
+    }
+
+    .nes-ui-container {
+      background-color: var(--color-black-absolute);
+    }
+
+    .nes-ui-container.nes-ui-with-title > .nes-ui-title {
+      background-color: var(--color-black-absolute);
+    }
+
+    .nes-ui-btn,
+    .nes-ui-icon-btn {
+      color: var(--color-black-absolute);
+      background-color: var(--color-white-absolute);
+    }
+
+    .nes-ui-btn:hover,
+    .nes-ui-icon-btn:hover {
+      color: var(--color-black-absolute);
+      background-color: var(--color-white-absolute-shadow);
+    }
+
+    .nes-ui-btn:after,
+    .nes-ui-icon-btn:after {
+      box-shadow: inset -4px -4px var(--default-color-shadow);
+    }
+  }
+
+  .nes-ui-btn:focus,
+  .nes-ui-icon-btn:focus {
+    box-shadow: 0 0 0 4px var(--color-black);
+  }
+}
+
+.nes-ui-text.nes-ui-is-disabled {
+  color: var(--disabled-color-normal);
+}
+
+.nes-ui-container {
+  background-color: var(--color-white-absolute);
+}
+
+.nes-ui-container.nes-ui-with-title > .nes-ui-title {
+  background-color: var(--color-white-absolute);
+}
+
+.nes-ui-btn,
+.nes-ui-icon-btn {
+  color: var(--color-black-absolute);
+  background-color: var(--color-white-absolute);
+}
+
+.nes-ui-btn:hover,
+.nes-ui-icon-btn:hover {
+  color: var(--color-black-absolute);
+  background-color: var(--color-white-absolute-shadow);
+}
+
+.nes-ui-btn:after,
+.nes-ui-icon-btn:after {
+  box-shadow: inset -4px -4px var(--default-color-shadow);
+}
+
+.nes-ui-btn:focus,
+.nes-ui-icon-btn:focus {
+  box-shadow: 0 0 0 4px var(--color-white);
+}
+
+.nes-ui-btn:active:not(.nes-ui-btn-disabled):after,
+.nes-ui-icon-btn:active:not(.nes-ui-btn-disabled):after {
+  box-shadow: inset 4px 4px var(--color-white-absolute-shadow);
+}
