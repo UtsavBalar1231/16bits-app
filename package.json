@@ -39,12 +39,7 @@
   "devDependencies": {
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@typescript-eslint/eslint-plugin": "^7.17.0",
-    "@typescript-eslint/parser": "^7.17.0",
     "autoprefixer": "^10.4.19",
-    "eslint": "^9.7.0",
-    "eslint-plugin-react-hooks": "^4.6.2",
-    "eslint-plugin-react-refresh": "^0.4.9",
     "nes-ui-react": "^0.3.0",
     "nes.css": "^2.3.0",
     "nes.icons": "^2.0.1",

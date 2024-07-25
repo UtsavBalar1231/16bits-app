@@ -9,33 +9,33 @@ export const navigation: NavigationItem[] = [
   {
     id: "0",
     title: "Docs",
-    url: "#docs",
+    url: "/docs",
   },
   {
     id: "1",
     title: "Products",
-    url: "#products",
+    url: "/products",
   },
   {
     id: "2",
     title: "About",
-    url: "#about",
+    url: "/about",
   },
   {
     id: "3",
     title: "Pre-Order",
-    url: "#preorder",
+    url: "/preorder",
   },
   {
     id: "4",
     title: "Sign up",
-    url: "#signup",
+    url: "/signup",
     onlyMobile: true,
   },
   {
     id: "5",
     title: "Sign in",
-    url: "#login",
+    url: "/login",
     onlyMobile: true,
   },
 ];

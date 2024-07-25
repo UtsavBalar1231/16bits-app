@@ -1,9 +1,8 @@
 interface LogoProps {
-  darkMode: boolean;
   className: string;
 }
 
-function Logo({ darkMode, className }: LogoProps) {
+function Logo({ className }: LogoProps) {
   const logo = `
     <path d="M848 400H928V480H768V80H848V160H928V240H848V400ZM928 400V240H1008V400H928Z"/>
     <path d="M1088 80V0H1168V80H1088ZM1168 480H1088V160H1168V480Z"/>
@@ -22,9 +21,7 @@ function Logo({ darkMode, className }: LogoProps) {
     <div onClick={handleClick}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className={`${className} ${
-          darkMode ? "fill-white-absolute" : "fill-black-absolute"
-        }`}
+        className={`fill-black-absolute dark:fill-white-absolute ${className}`}
         viewBox="0 0 2000 500"
         dangerouslySetInnerHTML={{ __html: logo }}
       />

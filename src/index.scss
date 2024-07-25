@@ -47,36 +47,36 @@ $default-colors: (
   normal: $default-color-normal,
   hover: $default-color-hover,
   shadow: $default-color-shadow,
-) !important;
+  ) !important;
 
 $disabled-colors: (
   normal: $disabled-color-normal,
   shadow: $disabled-color-shadow,
-) !important;
+  ) !important;
 
 $primary-colors: (
   normal: $primary-color-normal,
   hover: $primary-color-hover,
   shadow: $primary-color-shadow,
-) !important;
+  ) !important;
 
 $success-colors: (
   normal: $success-color-normal,
   hover: $success-color-hover,
   shadow: $success-color-shadow,
-) !important;
+  ) !important;
 
 $warning-colors: (
   normal: $warning-color-normal,
   hover: $warning-color-hover,
   shadow: $warning-color-shadow,
-) !important;
+  ) !important;
 
 $error-colors: (
   normal: $error-color-normal,
   hover: $error-color-hover,
   shadow: $error-color-shadow,
-) !important;
+  ) !important;
 
 $color-00: #504945 !important;
 $color-01: #282828 !important;
@@ -206,60 +206,73 @@ html.nes-ui {
   body {
     padding: 0;
     margin: 0;
-    font-family: "Press Start 2P", monospace;
+    font-family: "Press Start 2P",
+      monospace;
     -webkit-font-smoothing: antialiased;
     font-weight: 400;
     line-height: 1.5;
   }
 
   &.nes-ui-dark-mode {
+    background-color: var(--color-black-absolute
+    );
+  color: var(--color-white-absolute);
+
+  .nes-ui-button-wrapper.nes-ui-border-inverted {
+    border-color: var(--color-black-absolute);
+    border-image-source: var(--pixel-borders-image-1-color-black-absolute);
+  }
+
+  .nes-ui-button-wrapper.nes-ui-border-inverted,
+  .nes-ui-icon-button-wrapper.nes-ui-border-inverted {
+    border-image-source: var(--pixel-borders-image-1-color-black-absolute);
+  }
+
+  .nes-ui-text.nes-ui-is-disabled {
+    color: var(--disabled-color-normal);
+  }
+
+  .nes-ui-container {
     background-color: var(--color-black-absolute);
-    color: var(--color-white-absolute);
-
-    .nes-ui-button-wrapper.nes-ui-border-inverted {
-      border-color: var(--color-black-absolute);
-      border-image-source: var(--pixel-borders-image-1-color-black-absolute);
-    }
-
-    .nes-ui-button-wrapper.nes-ui-border-inverted,
-    .nes-ui-icon-button-wrapper.nes-ui-border-inverted {
-      border-image-source: var(--pixel-borders-image-1-color-black-absolute);
-    }
-
-    .nes-ui-text.nes-ui-is-disabled {
-      color: var(--disabled-color-normal);
-    }
-
-    .nes-ui-container {
-      background-color: var(--color-black-absolute);
-    }
-
-    .nes-ui-container.nes-ui-with-title > .nes-ui-title {
-      background-color: var(--color-black-absolute);
-    }
-
-    .nes-ui-btn,
-    .nes-ui-icon-btn {
-      color: var(--color-black-absolute);
-      background-color: var(--color-white-absolute);
-    }
-
-    .nes-ui-btn:hover,
-    .nes-ui-icon-btn:hover {
-      color: var(--color-black-absolute);
-      background-color: var(--color-white-absolute-shadow);
-    }
-
-    .nes-ui-btn:after,
-    .nes-ui-icon-btn:after {
-      box-shadow: inset -4px -4px var(--default-color-shadow);
-    }
   }
 
-  .nes-ui-btn:focus,
-  .nes-ui-icon-btn:focus {
-    box-shadow: 0 0 0 4px var(--color-black);
+  .nes-ui-container.nes-ui-with-title>.nes-ui-title {
+    background-color: var(--color-black-absolute);
   }
+
+  .nes-ui-btn,
+  .nes-ui-icon-btn {
+    color: var(--color-black-absolute);
+    background-color: var(--color-white-absolute);
+  }
+
+  .nes-ui-btn.nes-ui-btn-warning,
+  .nes-ui-icon-btn.nes-ui-btn-warning {
+    color: var(--color-black-absolute);
+    background-color: $color-09
+  }
+
+  .nes-ui-btn.nes-ui-btn-warning:after,
+  .nes-ui-icon-btn.nes-ui-btn-warning:after {
+    box-shadow: inset -4px -4px $color-18;
+  }
+
+  .nes-ui-btn:hover,
+  .nes-ui-icon-btn:hover {
+    color: var(--color-black-absolute);
+    background-color: var(--color-white-absolute-shadow);
+  }
+
+  .nes-ui-btn:after,
+  .nes-ui-icon-btn:after {
+    box-shadow: inset -4px -4px var(--default-color-shadow);
+  }
+}
+
+.nes-ui-btn:focus,
+.nes-ui-icon-btn:focus {
+  box-shadow: 0 0 0 4px var(--color-black);
+}
 }
 
 .nes-ui-text.nes-ui-is-disabled {
@@ -270,7 +283,7 @@ html.nes-ui {
   background-color: var(--color-white-absolute);
 }
 
-.nes-ui-container.nes-ui-with-title > .nes-ui-title {
+.nes-ui-container.nes-ui-with-title>.nes-ui-title {
   background-color: var(--color-white-absolute);
 }
 
@@ -293,10 +306,21 @@ html.nes-ui {
 
 .nes-ui-btn:focus,
 .nes-ui-icon-btn:focus {
-  box-shadow: 0 0 0 4px var(--color-white);
+  color: var(--color-black-absolute);
 }
 
 .nes-ui-btn:active:not(.nes-ui-btn-disabled):after,
 .nes-ui-icon-btn:active:not(.nes-ui-btn-disabled):after {
   box-shadow: inset 4px 4px var(--color-white-absolute-shadow);
+}
+
+.nes-ui-btn.nes-ui-btn-warning,
+.nes-ui-icon-btn.nes-ui-btn-warning {
+  color: var(--color-white-absolute);
+  background-color: $color-09
+}
+
+.nes-ui-btn.nes-ui-btn-warning:after,
+.nes-ui-icon-btn.nes-ui-btn-warning:after {
+  box-shadow: inset -4px -4px $color-18;
 }
