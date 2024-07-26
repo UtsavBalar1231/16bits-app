@@ -78,18 +78,8 @@ function Header({ toggleDarkMode }: headerProps) {
           >
             Login
           </Button>
-          <IconButton
-            borderInverted
-            className="hidden lg:flex text-center items-center"
-            onClick={toggleDarkMode}
-          >
-            <PixelIcon
-              name="dark:pixelicon-sun pixelicon-moon"
-              inverted={false}
-              size="small"
-            />
-          </IconButton>
         </div>
+
         <Button
           className="ml-auto lg:hidden text-center items-center"
           size="small"
@@ -97,6 +87,17 @@ function Header({ toggleDarkMode }: headerProps) {
         >
           <MenuSvg openNavigation={openNavigation} />
         </Button>
+        <IconButton
+          borderInverted
+          className="text-center items-center"
+          onClick={toggleDarkMode}
+        >
+          <PixelIcon
+            name="dark:pixelicon-sun pixelicon-moon"
+            inverted={false}
+            size="small"
+          />
+        </IconButton>
       </div>
     </div>
   );
