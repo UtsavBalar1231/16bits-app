@@ -3,13 +3,7 @@ import Section from "./Section";
 
 function About() {
   return (
-    <Section
-      className="pt-[12rem] -mt-[5.25rem]"
-      crosses
-      crossesOffset="translate-y-[5.25rem]"
-      customPaddings=""
-      id="about">
-
+    <>
       <Heading size="large" centered>
         &lt;About Us&gt;
       </Heading>
@@ -48,7 +42,8 @@ function About() {
           and hope you'll love it as much as we do.
         </Text>
       </Container>
-    </Section>
+
+    </>
   );
 }
 

@@ -1,11 +1,13 @@
-import { Button,  } from "nes-ui-react";
-import Section from "./Section";
-import { useRef } from "react";
 import Logo from "./Logo";
+import Section from "./Section";
+import { Button, } from "nes-ui-react";
+import { useNavigate } from "react-router-dom";
+import { useRef } from "react";
 
 
 function Hero() {
   const parallaxRef = useRef(null);
+  const navigate = useNavigate();
 
   return (
     <Section
@@ -24,9 +26,9 @@ function Hero() {
           <p className="top-15 body-2 sm:max-w-xl md:max-w-2xl max-w-4xl mx-auto mb-6 lg:mb-8 text-black-absolute dark:text-white-absolute">
             Fully customizable mechanical keyboards for your needs, designed and manufactored in India.
           </p>
-          <Button color="warning" onClick={() => window.location.href = "/products"}>
+          <Button color="warning" onClick={() => navigate("/products")}>
             See Catalog
-          </Button> 
+          </Button>
         </div>
       </div>
     </Section>
