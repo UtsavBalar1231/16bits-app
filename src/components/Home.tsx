@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 
 
-function Hero() {
+function Home() {
   const parallaxRef = useRef(null);
   const navigate = useNavigate();
 
@@ -35,4 +35,4 @@ function Hero() {
   );
 }
 
-export default Hero;
+export default Home;

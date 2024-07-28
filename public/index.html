@@ -1,35 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/16bits-light-logo.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <title>16 Bits</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script>
-      document.addEventListener("dragover", (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-      });
-      document.addEventListener("drop", (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-      });
-    </script>
-  </body>
+
+<head>
+	<meta charset="UTF-8" />
+	<link id="favicon-light" rel="icon" type="image/svg+xml" href="/16bits-light-logo.svg" />
+	<link id="favicon-dark" rel="icon" type="image/svg+xml" href="/16bits-dark-logo.svg" disabled />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+		integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<title>16 Bits</title>
+</head>
+
+<body>
+	<div id="root"></div>
+	<script>
+		document.addEventListener("dragover", (event) => {
+			event.preventDefault();
+			event.stopPropagation();
+		});
+		document.addEventListener("drop", (event) => {
+			event.preventDefault();
+			event.stopPropagation();
+		});
+	</script>
+</body>
+
 </html>

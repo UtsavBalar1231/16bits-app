@@ -2,10 +2,7 @@
 import plugin from "tailwindcss/plugin";
 
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{html,js,jsx,ts,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{html,js,jsx,ts,tsx}"],
   darkMode: "class",
   theme: {
     extend: {
@@ -19,6 +16,7 @@ export default {
         minecraft: ["Minecraft", "monospace"],
         "minecraft-bold": ["MinecraftBold", "monospace"],
         "press-start-2p": ["Press Start 2P", "monospace"],
+        "tiny-5": ["Tiny5", "monospace"],
       },
       colors: {
         black: "#1d2021",
@@ -142,8 +140,7 @@ export default {
       addBase({});
       addComponents({
         ".container": {
-          "@apply max-w-[77.5rem] mx-auto xl:max-w-[87.5rem]":
-            {},
+          "@apply max-w-[77.5rem] mx-auto xl:max-w-[87.5rem]": {},
         },
         ".h2": {
           "@apply text-[1.75rem] leading-[2.5rem] md:text-[2rem] md:leading-[2.5rem] lg:text-[2.5rem] lg:leading-[3.5rem] xl:text-[3rem] xl:leading-tight":
