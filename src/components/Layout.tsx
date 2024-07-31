@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import { setDarkModeActivation } from "nes-ui-react";
@@ -14,6 +14,7 @@ function Layout() {
     document.readyState === "complete" || document.readyState === "interactive",
   );
   const [showPreloader, setShowPreloader] = useState<boolean>(!isPageLoaded);
+  const [cartItemsCount, _setCartItemsCount] = useState<number>(0);
 
   const toggleDarkMode = useCallback(() => {
     setDarkMode((prevDarkMode) => !prevDarkMode);
@@ -67,7 +68,7 @@ function Layout() {
   return (
     <div className="flex flex-col min-h-screen">
       {showPreloader && <PreLoader />}
-      <Header toggleDarkMode={toggleDarkMode} />
+      <Header toggleDarkMode={toggleDarkMode} cartItems={cartItemsCount} />
       <Section
         crosses
         crossesOffset="translate-y-[4rem]"
@@ -81,7 +82,7 @@ function Layout() {
           />
           <img
             src={heartSvg}
-            className="absolute right-[0.25rem] tablet:right-[-2.875rem] desktop:right-[-13.375rem] bottom-[20rem] tablet:bottom-[-6.5rem] desktop:bottom-[10.5rem] w-[5.625rem] h-[4.875rem]  tablet:w-[11.25rem] tablet:h-[9.75rem] desktop:w-[16.875rem] desktop:h-[4.375rem] z-1 opacity-50"
+            className="absolute right-[0.25rem] tablet:right-[-2.875rem] desktop:right-[-13.375rem] bottom-[20rem] tablet:bottom-[-6.5rem] desktop:bottom-[10.5rem] w-[5.625rem] h-[4.875rem] tablet:w-[11.25rem] tablet:h-[9.75rem] desktop:w-[16.875rem] desktop:h-[4.375rem] z-1 opacity-50"
             alt=""
           />
           <Outlet />

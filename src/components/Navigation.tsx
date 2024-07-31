@@ -6,28 +6,29 @@ import { menuSlide, slide, scale } from './Animation'
 import Curve from './Curve'
 import NavFooter from './NavFooter'
 
-
 function Navigation() {
-    const [selectedIndicator, setSelectedIndicator] = useState(window.location.pathname);
+    const pathname: string = window.location.pathname;
+    const [selectedIndicator, setSelectedIndicator] = useState(pathname);
 
     useEffect(() => {
-        setSelectedIndicator(window.location.pathname);
+        setSelectedIndicator(pathname);
     }, []);
 
     return (
         <motion.div variants={menuSlide} initial="initial" animate="enter" exit="exit" className="fixed right-0 top-0 h-screen bg-black-absolute text-white dark:bg-white-absolute dark:text-black">
-            <div className="box-border h-full p-24 flex flex-col justify-between">
-                <div onMouseLeave={() => { setSelectedIndicator(window.location.pathname) }} className="flex flex-col text-4xl gap-3 mt-20">
-                    <div className="border-b uppercase text-xs mb-[1rem]">
+            <div className="box-border h-full p-[6rem] flex flex-col justify-between">
+                <div onMouseLeave={() => { setSelectedIndicator(window.location.pathname) }} className="flex flex-col text-6xl gap-2 mt-[5rem]">
+                    <div className="border-b border-white dark:border-black uppercase text-sm mb-[2.5rem] font-minecraft">
                         <p>Navigation</p>
                     </div>
-                    {navigation.map((item: NavigationItem) => (
+                    {navigation.map((item: NavigationItem, _index: number) => (
                         <motion.div className="relative flex items-center" onMouseEnter={() => { setSelectedIndicator(item.url) }} custom={item.id} variants={slide} initial="initial" animate="enter" exit="exit">
-                            <motion.div variants={scale} animate={selectedIndicator == item.url ? "open" : "closed"} className="w-[40px] h-[40px] bg-white rounded-2xl left-[-30px]">
+                            <motion.div variants={scale} animate={selectedIndicator == item.url ? "open" : "closed"} className="w-[0.5rem] h-[0.5rem] bg-code-09 dark:bg-code-18 rounded-full absolute right-[30px]">
                             </motion.div>
                             <Link
                                 key={item.id}
                                 to={item.url}
+                                className='no-underline text-white hover:text-code-09 dark:text-black-absolute dark:hover:text-code-18 transition-colors text-3xl font-minecraft'
                             >
                                 {item.title}
                             </Link>

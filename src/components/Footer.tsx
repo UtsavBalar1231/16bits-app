@@ -5,7 +5,7 @@ import Section from "./Section";
 
 const Footer = () => {
   return (
-    <Section className="flex flex-col px-5 py-[1rem]">
+    <Section className="flex flex-col px-5 justify-center py-[1rem] max-lg:py-4">
       <div className="flex flex-col md:flex-row items-center justify-between w-full mb-[1rem] text-center md:text-left">
         <div className="flex flex-col md:flex-row items-center">
           <p className="text-[1rem] font-bold text-black-absolute dark:text-white-absolute mb-[0.5rem] md:mb-0">
