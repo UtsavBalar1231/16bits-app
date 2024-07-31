@@ -18,7 +18,7 @@ function Home() {
       id="hero"
     >
       <div className="container relative p-[1rem] gap-[1rem]" ref={parallaxRef}>
-        <div className="relative z-1 sm:max-w-xl md:max-w-xl max-w-2xl mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem] p-4">
+        <div className="relative z-2 sm:max-w-xl md:max-w-xl max-w-2xl mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem] p-4">
           <h1 className="h1 sm:mb-6 lg:mb-8">
             Explore the most affordable&nbsp;keyboards with {` `}
             <Logo className="left-0 w-full h-[4rem] fill-code-18 dark:fill-code-09" />

@@ -21,7 +21,7 @@ function Header({ toggleDarkMode, cartItems }: headerProps) {
 
   return (
     <div
-      className="border-base text-black-absolute dark:border-background dark:text-white-absolute fixed top-0 left-0 w-full z-2 uppercase p-2"
+      className="border-base text-black-absolute dark:border-background dark:text-white-absolute fixed top-0 left-0 w-full z-3 uppercase p-2"
     >
 
       <div className="flex items-center justify-center px-5 max-lg:py-4">

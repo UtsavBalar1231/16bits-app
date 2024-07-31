@@ -1,11 +1,6 @@
+import { preloader } from "./Animation";
 import Logo from "./Logo";
 import { motion } from "framer-motion";
-
-const variants = {
-    hidden: { x: "-100vw", opacity: 0 },
-    visible: { x: 0, opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } },
-    exit: { x: "-100vw", opacity: 0, transition: { duration: 0.5, ease: "easeOut" } },
-};
 
 const PreLoader = () => {
     return (
@@ -14,17 +9,9 @@ const PreLoader = () => {
             initial="hidden"
             animate="visible"
             exit="exit"
-            variants={variants}
+            variants={preloader}
         >
-            <motion.div
-                className="flex items-center justify-between overflow-hidden h-15 w-[16rem] text-xl text-base dark:text-background"
-                initial={{ x: "-100vw" }}
-                animate={{ x: 0 }}
-                exit={{ x: "-100vw" }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-            >
-                <Logo className="w-[12rem] h-[12rem]"></Logo>
-            </motion.div>
+            <Logo className="w-[12rem] h-[12rem]"></Logo>
         </motion.div>
     );
 };
