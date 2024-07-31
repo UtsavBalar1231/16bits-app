@@ -10,10 +10,7 @@ import verticalGridLines from "../assets/vertical-grid-lines.svg";
 
 function Layout() {
   const [darkMode, setDarkMode] = useState<boolean>(false);
-  const [isPageLoaded, setIsPageLoaded] = useState<boolean>(
-    document.readyState === "complete" || document.readyState === "interactive",
-  );
-  const [showPreloader, setShowPreloader] = useState<boolean>(!isPageLoaded);
+  const [isPageLoaded, setIsPageLoaded] = useState<boolean>(false);
   const [cartItemsCount, _setCartItemsCount] = useState<number>(0);
 
   const toggleDarkMode = useCallback(() => {
@@ -53,21 +50,21 @@ function Layout() {
     return () => {
       document.removeEventListener("readystatechange", handlePageLoad);
     };
-  }, [isPageLoaded]);
+  }, []);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      setShowPreloader(!isPageLoaded);
-    }, 2500);
+      setIsPageLoaded(!isPageLoaded);
+    }, 5000);
 
     return () => {
       clearTimeout(timeoutId);
     };
-  }, [isPageLoaded]);
+  }, []);
 
   return (
     <div className="flex flex-col min-h-screen">
-      {showPreloader && <PreLoader />}
+      {!isPageLoaded && <PreLoader />}
       <Header toggleDarkMode={toggleDarkMode} cartItems={cartItemsCount} />
       <Section
         crosses
