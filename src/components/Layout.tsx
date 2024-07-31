@@ -1,17 +1,18 @@
-import { useCallback, useEffect, useState } from "react";
-import { Outlet } from "react-router-dom";
-import Header from "./Header";
-import { setDarkModeActivation } from "nes-ui-react";
 import Footer from "./Footer";
-import Section from "./Section";
+import Header from "./Header";
+import Lenis from 'lenis';
 import PreLoader from "./PreLoader";
+import Section from "./Section";
 import heartSvg from "../assets/heart.svg";
 import verticalGridLines from "../assets/vertical-grid-lines.svg";
+import { Outlet } from "react-router-dom";
+import { setDarkModeActivation } from "nes-ui-react";
+import { useCallback, useEffect, useState } from "react";
 
 function Layout() {
   const [darkMode, setDarkMode] = useState<boolean>(false);
   const [isPageLoaded, setIsPageLoaded] = useState<boolean>(false);
-  const [cartItemsCount, _setCartItemsCount] = useState<number>(0);
+  const [cartItemsCount, setCartItemsCount] = useState<number>(0);
 
   const toggleDarkMode = useCallback(() => {
     setDarkMode((prevDarkMode) => !prevDarkMode);
@@ -39,6 +40,20 @@ function Layout() {
   }, [darkMode]);
 
   useEffect(() => {
+    const lenis = new Lenis()
+
+    function raf(time: number) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+  }, [])
+  const updateCartItemsCount = (count: number) => {
+    setCartItemsCount(count);
+  };
+
+  useEffect(() => {
     const handlePageLoad = () => {
       setIsPageLoaded(true);
     };
@@ -50,22 +65,24 @@ function Layout() {
     return () => {
       document.removeEventListener("readystatechange", handlePageLoad);
     };
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setIsPageLoaded(!isPageLoaded);
-    }, 5000);
+    }, 1000);
 
     return () => {
       clearTimeout(timeoutId);
     };
+    // eslint-disable-next-line
   }, []);
 
   return (
     <div className="flex flex-col min-h-screen">
       {!isPageLoaded && <PreLoader />}
-      <Header toggleDarkMode={toggleDarkMode} cartItems={cartItemsCount} />
+      <Header toggleDarkMode={toggleDarkMode} cartItems={cartItemsCount} updateCartItems={updateCartItemsCount} />
       <Section
         crosses
         crossesOffset="translate-y-[4rem]"

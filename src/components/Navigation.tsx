@@ -12,7 +12,7 @@ function Navigation() {
 
     useEffect(() => {
         setSelectedIndicator(pathname);
-    }, []);
+    }, [pathname]);
 
     return (
         <motion.div variants={menuSlide} initial="initial" animate="enter" exit="exit" className="fixed right-0 top-0 h-screen bg-black-absolute text-white dark:bg-white-absolute dark:text-black">
@@ -22,13 +22,13 @@ function Navigation() {
                         <p>Navigation</p>
                     </div>
                     {navigation.map((item: NavigationItem, _index: number) => (
-                        <motion.div className="relative flex items-center" onMouseEnter={() => { setSelectedIndicator(item.url) }} custom={item.id} variants={slide} initial="initial" animate="enter" exit="exit">
-                            <motion.div variants={scale} animate={selectedIndicator == item.url ? "open" : "closed"} className="w-[0.5rem] h-[0.5rem] bg-code-09 dark:bg-code-18 rounded-full absolute right-[1rem]">
+                        <motion.div className="relative flex flex-col md:flex-row items-center" onMouseEnter={() => { setSelectedIndicator(item.url) }} custom={item.id} variants={slide} initial="initial" animate="enter" exit="exit">
+                            <motion.div variants={scale} animate={selectedIndicator === item.url ? "open" : "closed"} className="w-[0.5rem] h-[0.5rem] bg-code-09 dark:bg-code-15 rounded-full absolute right-[1rem]">
                             </motion.div>
                             <Link
                                 key={item.id}
                                 to={item.url}
-                                className='no-underline text-white hover:text-code-09 dark:text-black-absolute dark:hover:text-code-18 transition-colors text-3xl font-minecraft p-[0.5rem]'
+                                className='no-underline text-white hover:text-code-09 dark:text-black-absolute dark:hover:text-code-15 transition-colors text-3xl font-minecraft p-[0.5rem]'
                             >
                                 {item.title}
                             </Link>

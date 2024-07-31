@@ -4,7 +4,7 @@ import NavFooter from "./NavFooter";
 
 const Footer = () => {
   return (
-    <Section className="flex flex-col px-5 justify-center py-[1rem] max-lg:py-4">
+    <Section className="flex flex-col px-5 max-lg:py-4 relative py-10 lg:py-16 xl:py-20 px-5 justify-center py-[1rem] max-lg:py-4">
       <div className="flex flex-col md:flex-row items-center justify-between w-full mb-[1rem] text-center md:text-left">
         <div className="flex flex-col md:flex-row items-center">
           <p className="text-[1rem] font-bold text-black-absolute dark:text-white-absolute mb-[0.5rem] md:mb-0">

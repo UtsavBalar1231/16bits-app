@@ -6,7 +6,7 @@ function Error404() {
       className="flex flex-col justify-center items-center min-h-screen p-16"
     >
       <div className="flex flex-col justify-center items-center">
-        <h1 className="font-semibold text-[4rem] leading-[4rem] md:text-[7rem] md:leading-[7rem] lg:text-[8rem] lg:leading-[8rem] xl:text-[10rem] xl:leading-[10rem] bg-clip-text text-transparent bg-code-09 dark:bg-code-18 ">
+        <h1 className="font-semibold text-[4rem] leading-[4rem] md:text-[7rem] md:leading-[7rem] lg:text-[8rem] lg:leading-[8rem] xl:text-[10rem] xl:leading-[10rem] bg-clip-text text-transparent bg-code-09 dark:bg-code-15 ">
           404
         </h1>
       </div>

@@ -1,14 +1,14 @@
 import Logo from "./Logo";
 import MenuSvg from "./MenuSvg";
+import Navigation from "./Navigation";
+import { AnimatePresence } from 'framer-motion';
 import { Button, IconButton, PixelIcon } from "nes-ui-react";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { AnimatePresence } from 'framer-motion';
-import Navigation from "./Navigation";
-
 interface headerProps {
   toggleDarkMode: () => void;
   cartItems: number;
+  updateCartItems: (cartItems: number) => void
 }
 
 function Header({ toggleDarkMode, cartItems }: headerProps) {
@@ -30,7 +30,7 @@ function Header({ toggleDarkMode, cartItems }: headerProps) {
         </AnimatePresence>
         <NavLink className="block w-[12rem] xl:mr-8" to="/">
           <Logo
-            className="w-[4.5rem] h-[4.5rem] hover:fill-code-18 dark:hover:fill-code-09 transition-colors"
+            className="w-[4.5rem] h-[4.5rem] hover:fill-code-15 dark:hover:fill-code-09 transition-colors"
           ></Logo>
         </NavLink>
         <Button
