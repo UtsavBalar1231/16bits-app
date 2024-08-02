@@ -2,7 +2,6 @@ import Logo from "./Logo";
 import Section from "./Section";
 import { Button, } from "nes-ui-react";
 import { useNavigate } from "react-router-dom";
-import { useRef } from "react";
 
 
 function Home() {

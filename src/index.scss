@@ -192,6 +192,13 @@ $color-3F: #83a598 !important;
   --error-color-normal: #{$error-color-normal};
   --error-color-hover: #{$error-color-hover};
   --error-color-shadow: #{$error-color-shadow};
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+:root::-webkit-scrollbar {
+  display: none;
 }
 
 .nes-ui-btn,

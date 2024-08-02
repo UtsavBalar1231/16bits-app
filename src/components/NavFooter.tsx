@@ -3,7 +3,7 @@ import { socials } from "../constants/socials"
 
 function NavFooter() {
     return (
-        <div className="flex flex-wrap justify-center md:justify-start gap-[1rem] mt-[1rem] md:mt-0">
+        <div className="flex flex-wrap justify-center gap-[1rem]">
             {socials.map((item) => (
                 <Link
                     key={item.id}

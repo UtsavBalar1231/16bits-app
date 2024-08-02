@@ -58,9 +58,7 @@ function Layout() {
       setIsPageLoaded(true);
     };
 
-    if (!isPageLoaded) {
-      document.addEventListener("readystatechange", handlePageLoad);
-    }
+    document.addEventListener("readystatechange", handlePageLoad);
 
     return () => {
       document.removeEventListener("readystatechange", handlePageLoad);
@@ -79,31 +77,34 @@ function Layout() {
     // eslint-disable-next-line
   }, []);
 
+
   return (
-    <div className="flex flex-col min-h-screen">
-      {!isPageLoaded && <PreLoader />}
-      <Header toggleDarkMode={toggleDarkMode} cartItems={cartItemsCount} updateCartItems={updateCartItemsCount} />
-      <Section
-        crosses
-        crossesOffset="translate-y-[4rem]"
-        className="flex-1 pt-[4rem] lg:pt-[4rem] overflow-hidden overflow-y-auto bg-[linear-gradient(to_right,#a8998412_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:32px_32px]"
-      >
-        <div className="relative h-full bg-white-absolute dark:bg-black-absolute overflow-y-auto bg-[linear-gradient(to_right,#a8998412_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:32px_32px]">
-          <img
-            src={verticalGridLines}
-            className="absolute right-[0.25rem] tablet:right-[-2.1875rem] desktop:right-[-12rem] bottom-[13vh] tablet:bottom-[-9.5rem] desktop:bottom-[-0.5rem] z-1 opacity-50"
-            alt=""
-          />
-          <img
-            src={heartSvg}
-            className="absolute right-[0.25rem] tablet:right-[-2.875rem] desktop:right-[-13.375rem] bottom-[20rem] tablet:bottom-[-6.5rem] desktop:bottom-[10.5rem] w-[5.625rem] h-[4.875rem] tablet:w-[11.25rem] tablet:h-[9.75rem] desktop:w-[16.875rem] desktop:h-[4.375rem] z-1 opacity-50"
-            alt=""
-          />
-          <Outlet />
-        </div>
-      </Section>
+    <main>
+      <div className="flex flex-col min-h-screen">
+        {!isPageLoaded && <PreLoader />}
+        <Header toggleDarkMode={toggleDarkMode} cartItems={cartItemsCount} updateCartItems={updateCartItemsCount} />
+        <Section
+          crosses
+          crossesOffset="translate-y-[4rem]"
+          className="flex-1 pt-[4rem] lg:pt-[4rem] overflow-hidden overflow-y-auto bg-[linear-gradient(to_right,#a8998412_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:32px_32px]"
+        >
+          <div className="relative h-full bg-white-absolute dark:bg-black-absolute overflow-y-auto bg-[linear-gradient(to_right,#a8998412_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:32px_32px]">
+            <img
+              src={verticalGridLines}
+              className="absolute right-[0.25rem] tablet:right-[-2.1875rem] desktop:right-[-12rem] bottom-[13vh] tablet:bottom-[-9.5rem] desktop:bottom-[-0.5rem] z-1 opacity-50"
+              alt=""
+            />
+            <img
+              src={heartSvg}
+              className="absolute right-[0.25rem] tablet:right-[-2.875rem] desktop:right-[-13.375rem] bottom-[20rem] tablet:bottom-[-6.5rem] desktop:bottom-[10.5rem] w-[5.625rem] h-[4.875rem] tablet:w-[11.25rem] tablet:h-[9.75rem] desktop:w-[16.875rem] desktop:h-[4.375rem] z-1 opacity-50"
+              alt=""
+            />
+            <Outlet />
+          </div>
+        </Section>
+      </div>
       <Footer />
-    </div>
+    </main>
   );
 }
 

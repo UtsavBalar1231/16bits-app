@@ -21,7 +21,7 @@ function Logo({ className }: LogoProps) {
     <div onClick={handleClick}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className={`fill-black-absolute dark:fill-white-absolute ${className}`}
+        className={`${className} ${className.includes('fill') ? '' : ' fill-black-absolute dark:fill-white-absolute '}`}
         viewBox="0 0 2000 500"
         dangerouslySetInnerHTML={{ __html: logo }}
       />
